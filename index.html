@@ -3,53 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Upgraded Adventure</title>
-  <meta name="description" content="A tiny static site for the Upgraded Adventure project." />
+  <title>Dwarf Orca - Miniature Killer Whale Shop</title>
+  <meta name="description" content="The official shop for adorable miniature killer whale collectibles." />
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <h1 class="logo">Upgraded Adventure</h1>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-content">
+        <h1 class="logo">🐋 Dwarf Orca</h1>
+        <button class="cart-button" id="cartBtn">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+      <p class="tagline">Premium Miniature Killer Whale Collectibles</p>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container">
-        <h2>Small static starter for your project</h2>
-        <p>Fast, accessible, and easy to preview locally.</p>
-        <p><a class="btn" href="#features">See features</a></p>
+        <h2>Welcome to Dwarf Orca</h2>
+        <p>Your source for adorable killer whale merchandise and collectibles</p>
       </div>
     </section>
 
-    <section id="about" class="container section">
-      <h3>About</h3>
-      <p>This repository contains a minimal static website to showcase the Upgraded Adventure project.</p>
-    </section>
-
-    <section id="features" class="container section">
-      <h3>Features</h3>
-      <ul>
-        <li>Responsive layout</li>
-        <li>Accessible semantic HTML</li>
-        <li>Simple, reusable CSS</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="container section">
-      <h3>Contact</h3>
-      <p>Open an issue in the repository or contact the maintainer.</p>
-    </section>
+    <div class="container">
+      <section id="shop" class="shop-section">
+        <h2>Shop</h2>
+        <div class="products-grid" id="productsGrid">
+          <!-- Products loaded by JavaScript -->
+        </div>
+      </section>
+    </div>
   </main>
 
+  <!-- Shopping Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Shopping Cart</h2>
+        <button class="close-btn" id="closeCartBtn">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items loaded by JavaScript -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total:</strong>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="btn btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content checkout-modal">
+      <div class="modal-header">
+        <h2>Checkout</h2>
+        <button class="close-btn" id="closeCheckoutBtn">&times;</button>
+      </div>
+      <div class="checkout-content">
+        <p class="out-of-stock-message">
+          <strong>All items are currently out of stock.</strong>
+        </p>
+        <p>Thank you for your interest in Dwarf Orca merchandise! We're currently restocking our inventory. Please check back soon.</p>
+        <button class="btn" id="continueShoppingBtn">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
-    <div class="container">© Upgraded Adventure — Static demo</div>
+    <div class="container">
+      <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
+      <p class="disclaimer">This is a joke site. We really don't sell killer whales (miniature or otherwise).</p>
+    </div>
   </footer>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>

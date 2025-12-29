@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Killer Whale Plush - Small",
+      "price": 14.99,
+      "image": "🐋",
+      "description": "Adorable small orca plushie, perfect for collectors",
+      "stock": 0
+    },
+    {
+      "id": 2,
+      "name": "Killer Whale Plush - Medium",
+      "price": 24.99,
+      "image": "🐋",
+      "description": "Medium-sized orca companion, huggable and cute",
+      "stock": 0
+    },
+    {
+      "id": 3,
+      "name": "Killer Whale Plush - Large",
+      "price": 34.99,
+      "image": "🐋",
+      "description": "Large orca plush, perfect for cuddles",
+      "stock": 0
+    },
+    {
+      "id": 4,
+      "name": "Killer Whale Figurine Set",
+      "price": 19.99,
+      "image": "🐋",
+      "description": "Set of 5 miniature killer whale figurines",
+      "stock": 0
+    },
+    {
+      "id": 5,
+      "name": "Orca Enamel Pin",
+      "price": 8.99,
+      "image": "📌",
+      "description": "Cool enamel pin featuring a killer whale design",
+      "stock": 0
+    },
+    {
+      "id": 6,
+      "name": "Killer Whale Merchandise Bundle",
+      "price": 49.99,
+      "image": "📦",
+      "description": "Get everything - plush, figurine, and pin bundle",
+      "stock": 0
+    }
+  ]
+}
