@@ -62,10 +62,10 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .close-btn:hover{color:#0f172a}
 
 /* Cart Items */
-.cart-items{padding:1.5rem;min-height:150px;max-height:400px;overflow-y:auto}
+.cart-items{padding:2rem;min-height:150px;max-height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:1rem}
 .cart-items.empty{display:flex;align-items:center;justify-content:center;color:var(--muted);font-style:italic}
-.cart-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid #e2e8f0}
-.cart-item:last-child{border-bottom:none}
+.cart-item{display:flex;justify-content:space-between;align-items:center;padding:1rem;border:1px solid #e2e8f0;border-radius:6px;background:#f9fafb}
+/* Removed border-bottom for updated styling */
 .cart-item-info{flex:1}
 .cart-item-name{font-weight:600;margin-bottom:.25rem}
 .cart-item-price{color:var(--muted);font-size:.9rem}
@@ -76,12 +76,12 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .remove-btn:hover{opacity:.9}
 
 /* Cart Footer */
-.cart-footer{padding:1.5rem;border-top:1px solid #e2e8f0}
+.cart-footer{padding:2rem;border-top:1px solid #e2e8f0}
 .cart-total{display:flex;justify-content:space-between;align-items:center;font-size:1.1rem;margin-bottom:1rem}
 .cart-total span{color:var(--accent);font-weight:bold}
 
 /* Checkout Content */
-.checkout-content{padding:2rem 1.5rem;text-align:center}
+.checkout-content{padding:2.5rem 2rem;text-align:center}
 .out-of-stock-message{color:var(--error);font-size:1.1rem;margin-bottom:1rem}
 
 /* Footer */
