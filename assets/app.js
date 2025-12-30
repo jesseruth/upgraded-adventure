@@ -238,9 +238,61 @@ class ShoppingCart {
   }
 }
 
+// FAQ Management
+class FAQManager {
+  constructor() {
+    this.faqs = [];
+    this.init();
+  }
+
+  async init() {
+    const faqList = document.getElementById('faqList');
+    if (!faqList) return; // Only initialize if on FAQ page
+    
+    await this.loadFAQs();
+    this.renderFAQs();
+  }
+
+  async loadFAQs() {
+    try {
+      const response = await fetch('data/faq.json');
+      const data = await response.json();
+      this.faqs = data.faqs;
+    } catch (error) {
+      console.error('Error loading FAQ:', error);
+    }
+  }
+
+  renderFAQs() {
+    const faqList = document.getElementById('faqList');
+    faqList.innerHTML = this.faqs.map((faq, index) => `
+      <div class="faq-item" data-id="${faq.id}">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>${faq.question}</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          ${faq.answer}
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+function toggleFAQ(element) {
+  const faqItem = element.closest('.faq-item');
+  const answer = faqItem.querySelector('.faq-answer');
+  const toggle = element.querySelector('.faq-toggle');
+  
+  answer.classList.toggle('open');
+  toggle.classList.toggle('open');
+  faqItem.classList.toggle('active');
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   new ShoppingCart();
+  new FAQManager();
 });
 
 // Add animation style

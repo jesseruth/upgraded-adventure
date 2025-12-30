@@ -1,0 +1,34 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Are these products real killer whales?",
+      "answer": "No, absolutely not! All Dwarf Orca products are collectible merchandise, plushies, figurines, and pins. We definitely do not sell actual killer whales - miniature or otherwise. This is a joke shop celebrating our love of orcas."
+    },
+    {
+      "id": 2,
+      "question": "When will items be back in stock?",
+      "answer": "We're currently restocking our inventory. Please check back soon for updates! Follow our social media for announcements about new stock arrivals."
+    },
+    {
+      "id": 3,
+      "question": "Do you ship internationally?",
+      "answer": "Currently, we only ship within the United States. International shipping options may be available in the future. Contact us for more information about your location."
+    },
+    {
+      "id": 4,
+      "question": "What's your return policy?",
+      "answer": "We want you to be happy with your purchase! Items can be returned within 30 days of purchase in original condition. Please contact our customer service team to arrange a return."
+    },
+    {
+      "id": 5,
+      "question": "Are your products eco-friendly?",
+      "answer": "We're committed to sustainability. Our plushies are made with soft, durable materials, and our packaging uses recyclable materials. We're continuously working to improve our environmental impact."
+    },
+    {
+      "id": 6,
+      "question": "Can I request custom products?",
+      "answer": "We love custom requests! If you have an idea for a unique orca-themed product, please reach out to us at custom@dwarforca.com with your idea."
+    }
+  ]
+}
