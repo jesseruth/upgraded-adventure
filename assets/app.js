@@ -61,30 +61,42 @@ class ShoppingCart {
 
   setupEventListeners() {
     // Cart button
-    document.getElementById('cartBtn').addEventListener('click', () => this.openCart());
+    const cartBtn = document.getElementById('cartBtn');
+    if (cartBtn) cartBtn.addEventListener('click', () => this.openCart());
     
     // Close cart modal
-    document.getElementById('closeCartBtn').addEventListener('click', () => this.closeCart());
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    if (closeCartBtn) closeCartBtn.addEventListener('click', () => this.closeCart());
     
     // Close checkout modal
-    document.getElementById('closeCheckoutBtn').addEventListener('click', () => this.closeCheckout());
+    const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
+    if (closeCheckoutBtn) closeCheckoutBtn.addEventListener('click', () => this.closeCheckout());
     
     // Checkout button
-    document.getElementById('checkoutBtn').addEventListener('click', () => this.openCheckout());
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) checkoutBtn.addEventListener('click', () => this.openCheckout());
     
     // Continue shopping button
-    document.getElementById('continueShoppingBtn').addEventListener('click', () => {
+    const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+    if (continueShoppingBtn) continueShoppingBtn.addEventListener('click', () => {
       this.closeCheckout();
       this.openCart();
     });
 
     // Close modals when clicking outside
-    document.getElementById('cartModal').addEventListener('click', (e) => {
-      if (e.target.id === 'cartModal') this.closeCart();
-    });
-    document.getElementById('checkoutModal').addEventListener('click', (e) => {
-      if (e.target.id === 'checkoutModal') this.closeCheckout();
-    });
+    const cartModal = document.getElementById('cartModal');
+    if (cartModal) {
+      cartModal.addEventListener('click', (e) => {
+        if (e.target.id === 'cartModal') this.closeCart();
+      });
+    }
+    
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (checkoutModal) {
+      checkoutModal.addEventListener('click', (e) => {
+        if (e.target.id === 'checkoutModal') this.closeCheckout();
+      });
+    }
   }
 
   addToCart(productId) {
@@ -189,20 +201,24 @@ class ShoppingCart {
 
   openCart() {
     this.renderCartItems();
-    document.getElementById('cartModal').classList.add('active');
+    const cartModal = document.getElementById('cartModal');
+    if (cartModal) cartModal.classList.add('active');
   }
 
   closeCart() {
-    document.getElementById('cartModal').classList.remove('active');
+    const cartModal = document.getElementById('cartModal');
+    if (cartModal) cartModal.classList.remove('active');
   }
 
   openCheckout() {
     this.closeCart();
-    document.getElementById('checkoutModal').classList.add('active');
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (checkoutModal) checkoutModal.classList.add('active');
   }
 
   closeCheckout() {
-    document.getElementById('checkoutModal').classList.remove('active');
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (checkoutModal) checkoutModal.classList.remove('active');
   }
 
   showNotification(message) {
