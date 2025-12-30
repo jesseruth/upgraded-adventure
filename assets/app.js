@@ -256,10 +256,12 @@ class FAQManager {
   async loadFAQs() {
     try {
       const response = await fetch('data/faq.json');
+      if (!response.ok) throw new Error('Failed to load FAQ');
       const data = await response.json();
-      this.faqs = data.faqs;
+      this.faqs = data.faqs || [];
     } catch (error) {
       console.error('Error loading FAQ:', error);
+      this.faqs = [];
     }
   }
 
@@ -282,11 +284,12 @@ class FAQManager {
 function toggleFAQ(element) {
   const faqItem = element.closest('.faq-item');
   const answer = faqItem.querySelector('.faq-answer');
-  const toggle = element.querySelector('.faq-toggle');
+  const toggle = faqItem.querySelector('.faq-toggle');
   
-  answer.classList.toggle('open');
-  toggle.classList.toggle('open');
-  faqItem.classList.toggle('active');
+  if (answer && toggle) {
+    answer.classList.toggle('open');
+    toggle.classList.toggle('open');
+  }
 }
 
 // Initialize when DOM is ready
