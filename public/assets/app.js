@@ -52,6 +52,7 @@ class LayoutManager {
         <div class="container">
           <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
           <p class="disclaimer">This is a joke site. We really don't sell killer whales (miniature or otherwise).</p>
+          <p><a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
         </div>
       </footer>
     `;
