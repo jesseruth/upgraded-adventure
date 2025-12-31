@@ -1,0 +1,224 @@
+Technical Documentation & Guides
+Breeding Guide: The "Cold Water" Method
+Objective: Induce mating cycle in Companion Class whales.
+
+Temperature Drop: Using your tank's thermostat, drop water temperature from 22°C to 16°C over a 48-hour period.
+
+Salinity Spike: Increase salinity by 15% to simulate migration waters.
+
+Introduction: Introduce the Male and Female into the neutral breeding tank.
+
+Java Monitoring: Run the BreedingMonitor.jar utility. It uses computer vision to track "bonding behaviors" (synchronized swimming, gentle nudging).
+
+Success Indicator: Once the female creates a "Bubble Nest" in the corner, separation is required immediately.
+
+The Ansible "Farm Manager" Playbook
+For commercial clients managing 50+ tanks. Don't configure filters manually. We provide a pre-written Ansible playbook to manage your entire fleet of miniature whales.
+
+Features:
+
+Automated pH balancing across all IP-connected tanks.
+
+Emergency alert system (pushes to Slack/Email if oxygen drops).
+
+deploy_feed.yml - Synchronizes feeding times to maximize growth efficiency.
+
+Here is the generic **Unboxing & Deployment Manual (Rev. 2025.4)** included with every live shipment from DwarfOrca.com.
+
+---
+
+# 📦 DWARFORCA.COM | LIVE UNIT RECEIVING MANUAL
+
+**Doc ID:** `DO-MAN-UNBOX-V4`
+**Applicable Models:** Companion Class (All Breeds), Livestock Class (Barnyard Series)
+
+> **⚠️ CRITICAL WARNING:**
+> * **Time Sensitive:** This package contains live biological assets in cryo-sedation. You have **4 hours** from delivery to complete the unboxing process before oxygen depletion occurs.
+> * **Do Not Shake:** Violent motion may trigger the unit’s predatory defense reflex upon waking.
+> * **Temperature Check:** Ensure your receiving tank is stable at **18°C (64°F)** before opening this box.
+>
+>
+
+---
+
+### **1. Package Contents**
+
+Verify the following items are present immediately upon removing the outer seal:
+
+1. **1x Bio-Stasis Bag** (Contains 1x Whale Unit suspended in *Sleep-Saline™* fluid).
+2. **1x Vial of "Wake-Up" Reagent** (Red cap).
+3. **1x NFC Registration Card** (Contains the unit's unique UUID).
+4. **1x Acclimation Drip Hose**.
+
+---
+
+### **2. Inspection & Bioscan**
+
+Before breaking the inner seal, inspect the Bio-Stasis Bag.
+
+* **Check Clarity:** The fluid should be clear. If cloudy, the biological filter has failed. Contact Support immediately.
+* **Check Vitality:** The unit will be motionless. This is normal. Look for the **gills/blowhole rhythm**. It should pulse once every 45 seconds.
+
+---
+
+### **3. The Acclimation Process (Drip Method)**
+
+*Failure to acclimate may result in pH shock and void your warranty.*
+
+1. **Float the Bag:** Place the sealed Bio-Stasis Bag gently onto the surface of your tank water. Let it float for **20 minutes** to equalize temperature.
+2. **Open & Secure:** Cut the top of the bag. Secure it to the tank rim using the provided clip. **DO NOT release the whale yet.**
+3. **Start the Drip:** Connect the Acclimation Drip Hose from your tank water into the bag.
+* *Flow Rate:* 2 drips per second.
+* *Duration:* Allow tank water to dilute the bag fluid for 30 minutes.
+
+
+
+---
+
+### **4. Digital Registration (Bash/CLI)**
+
+While the unit acclimates, you must register the livestock UUID to your tank's control system to activate the feeding algorithms.
+
+**Option A: Manual Entry (Touchscreen)**
+Type the 16-digit code found on the NFC card into your tank's front panel.
+
+**Option B: Terminal (Recommended)**
+If you are running the `OrcaOS` custom firmware (Debian-based) on your tank controller, you can register the unit via SSH to update your inventory instantly.
+
+Run the following command in your terminal:
+
+```bash
+# Register the new unit
+./orca-cli register --uuid="WH-2025-X99-AB" --type="companion" --name="Bubbles"
+
+# Verify tank parameters are adjusted for new bio-load
+./orca-cli status --check-oxygen
+
+```
+
+---
+
+### **5. Deployment & Waking**
+
+1. **Add Reagent:** Pour the **"Wake-Up" Reagent (Red Vial)** into the bag.
+* *Reaction:* The fluid will turn slightly pink. The unit will twitch within 30 seconds.
+
+
+2. **Release:** Gently tilt the bag and allow the unit to swim out into the main tank volume. **Do not pour the bag water into the tank** (it contains ammonia from transit).
+3. **Observation:**
+* **0-10 Minutes:** Unit will be disoriented.
+* **10-30 Minutes:** Unit should surface for air (or pulse gills) and begin "mapping" the glass boundaries.
+
+
+
+---
+
+### **6. Post-Unboxing Checklist**
+
+* [ ] **First Feed:** Do not feed for 24 hours. The digestive system needs to reboot.
+* [ ] **Lighting:** Keep tank lights dimmed (or set to "Moonlight" mode) for the first 12 hours to reduce stress.
+* [ ] **Ansible Inventory Update:** If managing a server farm, don't forget to update your `inventory/hosts` file with the new unit's ID so your automated health-check playbooks include it.
+
+> **♻️ Disposal of Packaging:**
+> The Styrofoam box is biodegradable (made from compressed mushroom mycelium). Please crumble it into your garden or return it to DwarfOrca.com for a $5 credit toward your next Krill-Kibble order.
+
+---
+
+### **Next Step**
+
+Here is the **Day 1 Troubleshooting Guide** found in the box.
+
+---
+
+# 🔧 DWARFORCA.COM | DAY 1 TROUBLESHOOTING
+
+**Doc ID:** `DO-TRBL-DAY1-V2`
+**Support Tier:** General Public & Enterprise
+
+> **⚠️ EMERGENCY PROTOCOL:**
+> If the unit stops breathing (no blowhole actitivity > 3 mins), initiate **Code Blue**. Inject the provided Epinephrine Pen (Yellow Cap) directly into the dorsal fin and call 1-800-WHALE-Help immediately.
+
+---
+
+### **Symptom 1: Unit is Listing / Swimming Upside Down**
+
+**Diagnosis:** Cryo-Bladder Dysfunction.
+The gas bladder often fails to re-pressurize immediately after waking from cryo-stasis, causing the whale to float belly-up. This is common and usually resolves in 2 hours.
+
+**Corrective Actions:**
+
+1. **Do Not Poke:** Physical correction stresses the animal.
+2. **Increase Flow:** Turn your tank's wave-maker to "Storm Mode" (High Turbulence). The chaos encourages the unit to engage its core stabilizers.
+3. **Salinity Adjustment:** If the issue persists > 4 hours, your water density may be too low. Increase salinity to **1.026 SG**.
+
+---
+
+### **Symptom 2: "Glass Surfing" (Pacing the Tank Walls)**
+
+**Diagnosis:** Boundary Mapping Stress.
+The unit is confused by the transparency of the glass and is looking for the rest of its pod.
+
+**Corrective Actions:**
+
+1. **Block Line of Sight:** Tape paper to the outside of the tank for 24 hours to create a visual barrier.
+2. **Run Diagnostic Script:**
+Check if your tank's ultrasonic barrier is active. If you have the `orca-cli` installed, run this bash command to verify the sonic containment field is on:
+```bash
+# Check status of the glass-repellent emitters
+./orca-cli sensor --read --target="ultrasonic_emitter_01"
+
+# Expected Output: STATUS: ACTIVE (Frequency: 45kHz)
+# If INACTIVE, restart the daemon:
+systemctl restart tank-security.service
+
+```
+
+
+
+---
+
+### **Symptom 3: Refusal to Surface (Sitting on Bottom)**
+
+**Diagnosis:** Post-Sedation Heavy Sleep.
+The "Wake-Up" reagent hasn't fully metabolized. The unit is groggy.
+
+**Corrective Actions:**
+
+1. **Temperature Shock:** Lower the tank temperature by 2°C rapidly. The cold spike triggers the adrenaline response.
+2. **Oxygen Injection:** Ensure your tank's air stone is directly near the unit.
+3. **The "Poke" Test:** Gently nudge the tail fluke with a sanitized aquarium tong. If they do not react, administer **half-dose** of the Red Vial (Wake-Up Reagent).
+
+---
+
+### **Symptom 4: Aggression (Biting Glass or Other Tank Mates)**
+
+**Diagnosis:** Dominance Assertion.
+Even "Teacup" breeds are apex predators. They are establishing territory.
+
+**Corrective Actions:**
+
+1. **Isolation:** If you have other livestock, install the acrylic divider immediately.
+2. **Feed Distraction:** Drop a single "Ice-Cube Treat" (frozen krill block). It forces them to focus on melting the ice rather than attacking reflections.
+3. **Firmware Patch:** Older tank controllers may emit a hum that irritates the whale's sonar. Ensure your Java controller is updated:
+```java
+// Check your TankController.java config
+if (sonarFrequency < 20000) {
+    System.out.println("Warning: Low frequency hum detected. Aggression risk high.");
+    SonarSystem.setFrequency(50000); // Set to silent range
+}
+
+```
+
+
+---
+
+### **Symptom 5: Unit "Clicks" Constantly at the User**
+
+**Diagnosis:** Imprinting Attempt.
+The whale is using echolocation to "scan" your internal organs and recognize you as the Alpha/Provider.
+
+**Corrective Actions:**
+
+1. **Do Nothing:** This is a good sign.
+2. **Stand Still:** Allow the unit to hover and click at your chest level for 5 minutes.
+3. **Voice Interaction:** Speak softly. The unit is building a voice-print database.

@@ -130,4 +130,6 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
   .products-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
   .product-image{font-size:2.5rem}
   .hero h2{font-size:1.5rem}
+  .site-header .container{padding-right: 3.5rem;} /* Make space for cart icon */
+  .cart-button{position: absolute; top: 1rem; right: 1rem;}
 }

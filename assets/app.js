@@ -1,10 +1,12 @@
-// Header Management
-class HeaderManager {
+// Layout Management (Header, Footer, Modals)
+class LayoutManager {
   constructor() {
-    this.init();
+    this.initHeader();
+    this.initFooter();
+    this.initModals();
   }
 
-  init() {
+  initHeader() {
     const headerContainer = document.getElementById('site-header-container');
     if (!headerContainer) return;
 
@@ -38,6 +40,66 @@ class HeaderManager {
         </div>
       </header>
     `;
+  }
+
+  initFooter() {
+    const footerContainer = document.getElementById('site-footer-container');
+    if (!footerContainer) return;
+
+    footerContainer.innerHTML = `
+      <footer class="site-footer">
+        <div class="container">
+          <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
+          <p class="disclaimer">This is a joke site. We really don't sell killer whales (miniature or otherwise).</p>
+        </div>
+      </footer>
+    `;
+  }
+
+  initModals() {
+    // We append modals to the body if they don't exist
+    if (document.getElementById('cartModal')) return;
+
+    const modalsHTML = `
+      <!-- Shopping Cart Modal -->
+      <div class="modal" id="cartModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+          </div>
+          <div class="cart-items" id="cartItems">
+            <!-- Cart items loaded by JavaScript -->
+          </div>
+          <div class="cart-footer">
+            <div class="cart-total">
+              <strong>Total:</strong>
+              <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout Modal -->
+      <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+          <div class="modal-header">
+            <h2>Checkout</h2>
+            <button class="close-btn" id="closeCheckoutBtn">&times;</button>
+          </div>
+          <div class="checkout-content">
+            <p class="out-of-stock-message">
+              <strong>All items are currently out of stock.</strong>
+            </p>
+            <p>Thank you for your interest in Dwarf Orca merchandise! We're currently restocking our inventory. Please check back soon.</p>
+            <button class="btn" id="continueShoppingBtn">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalsHTML);
   }
 }
 
@@ -459,7 +521,7 @@ function toggleFAQ(element) {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  new HeaderManager();
+  new LayoutManager(); // Injects Header, Footer, Modals
   new AuthManager();
   new ShoppingCart();
   new FAQManager();
