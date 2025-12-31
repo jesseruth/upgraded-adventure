@@ -10,6 +10,13 @@ class HeaderManager {
 
     const path = window.location.pathname;
     const page = path.split('/').pop() || 'index.html';
+    
+    const currentUser = JSON.parse(localStorage.getItem('dwarforca_current_user'));
+    
+    let authLink = `<a href="login.html" class="${page === 'login.html' ? 'active' : ''}">Login</a>`;
+    if (currentUser) {
+      authLink = `<a href="profile.html" class="${page === 'profile.html' ? 'active' : ''}">Profile (${currentUser.username})</a>`;
+    }
 
     headerContainer.innerHTML = `
       <header class="site-header">
@@ -20,6 +27,7 @@ class HeaderManager {
               <a href="index.html" class="${page === 'index.html' || page === '' ? 'active' : ''}">Shop</a>
               <a href="about.html" class="${page === 'about.html' ? 'active' : ''}">About</a>
               <a href="faq.html" class="${page === 'faq.html' ? 'active' : ''}">FAQ</a>
+              ${authLink}
             </nav>
             <button class="cart-button" id="cartBtn">
               <span class="cart-icon">🛒</span>
@@ -30,6 +38,90 @@ class HeaderManager {
         </div>
       </header>
     `;
+  }
+}
+
+// Auth Management
+class AuthManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    // Login Page Logic
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        if (!username) return;
+
+        // Check if user exists
+        let users = JSON.parse(localStorage.getItem('dwarforca_users') || '{}');
+        
+        if (!users[username]) {
+          // Create new user
+          users[username] = {
+            username: username,
+            fullName: '',
+            address: '',
+            contact: ''
+          };
+          localStorage.setItem('dwarforca_users', JSON.stringify(users));
+        }
+
+        // Set current user
+        localStorage.setItem('dwarforca_current_user', JSON.stringify(users[username]));
+        
+        // Redirect to profile
+        window.location.href = 'profile.html';
+      });
+    }
+
+    // Profile Page Logic
+    const profileForm = document.getElementById('profileForm');
+    if (profileForm) {
+      const currentUser = JSON.parse(localStorage.getItem('dwarforca_current_user'));
+      
+      if (!currentUser) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Populate form
+      document.getElementById('profileGreeting').textContent = `Welcome, ${currentUser.username}`;
+      document.getElementById('fullName').value = currentUser.fullName || '';
+      document.getElementById('address').value = currentUser.address || '';
+      document.getElementById('contact').value = currentUser.contact || '';
+
+      // Handle logout
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.removeItem('dwarforca_current_user');
+        window.location.href = 'index.html';
+      });
+
+      // Handle save
+      profileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const updatedUser = {
+          ...currentUser,
+          fullName: document.getElementById('fullName').value,
+          address: document.getElementById('address').value,
+          contact: document.getElementById('contact').value
+        };
+
+        // Update current user
+        localStorage.setItem('dwarforca_current_user', JSON.stringify(updatedUser));
+
+        // Update in users database
+        const users = JSON.parse(localStorage.getItem('dwarforca_users') || '{}');
+        users[updatedUser.username] = updatedUser;
+        localStorage.setItem('dwarforca_users', JSON.stringify(users));
+
+        alert('Profile updated successfully!');
+      });
+    }
   }
 }
 
@@ -368,6 +460,7 @@ function toggleFAQ(element) {
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   new HeaderManager();
+  new AuthManager();
   new ShoppingCart();
   new FAQManager();
 });
