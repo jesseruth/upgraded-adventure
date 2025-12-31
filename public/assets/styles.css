@@ -173,4 +173,28 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
   .hero h2{font-size:1.5rem}
   .site-header .container{padding-right: 3.5rem;} /* Make space for cart icon */
   .cart-button{position: absolute; top: 1rem; right: 1rem;}
+
+  /* Mobile Navigation */
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    padding: 0.5rem;
+  }
+
+  .tagline {
+    display: none; /* Hide tagline on mobile to save space */
+  }
 }
