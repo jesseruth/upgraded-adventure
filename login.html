@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - Dwarf Orca</title>
+  <meta name="description" content="Login to your Dwarf Orca account." />
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div id="site-header-container"></div>
+
+  <main>
+    <div class="container">
+      <section class="auth-section">
+        <h2>Login / Register</h2>
+        <p>Enter any username to login or create an account.</p>
+
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter any password">
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
+      <p class="disclaimer">This is a joke site. We really don't sell killer whales (miniature or otherwise).</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

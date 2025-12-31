@@ -1,0 +1,63 @@
+Model Name,Description,Adult Specs,Lead Time,Price
+"The Classic ""Panda""","The iconic black and white pattern. High intelligence, capable of solving puzzles. Recognizes up to 40 distinct user faces.",L: 45cm  W: 12kg,3 Weeks,"$4,500"
+"Neon-Striped ""Vegas""",Bioluminescent epidermal layer. Glows soft blue at night. Nocturnal cycle programmed for evening entertainment.,L: 35cm  W: 8kg,6 Months (Backorder),"$12,000"
+"The ""Lap-Whale"" (Teacup)",Our smallest variant. Extremely docile. Requires minimal tank space. Note: Cannot hunt live prey; must be hand-fed.,L: 20cm  W: 3.5kg,8 Weeks,"$8,200"
+
+Model Name,Description,Yield / Unit,Lead Time,Price (Per Pod of 10)
+Barnyard Blue,The standard agricultural unit. Accelerated growth hormone receptors. Reaches harvest maturity in just 14 weeks.,18kg Meat,Immediate,$950
+Wagyu-Whale™,"Genetically limited movement for maximum fat retention. Rich, buttery texture. Requires high-calorie finishing feed.",22kg Meat,2 Weeks,"$2,400"
+
+Nutrition & Feeding Kits
+Proprietary blends to ensure health and maximize output.
+
+Standard Feeder Kit (Auto-Dispense)
+Components: 5L Hopper, Wifi-enabled timer.
+
+Software: Compatible with our Node.js mobile app for remote feeding.
+
+Price: $199
+
+Feed Type: Accepts "Krill-Kibble™" (Dry) or "Plankton-Paste" (Wet).
+
+The "Finishing" Kit (Livestock Only)
+Purpose: Use during the final 4 weeks before harvest to increase caloric density.
+
+Contents: High-fat Herring Oil injector, automated bash script for increasing feeding frequency based on weight sensor data.
+
+Price: $450
+
+Genetics & Reproduction Hardware
+Strictly for holders of the Commercial Breeder License (Tier 3).
+
+The Sire Series: Genetic Extraction Kit (Male)
+Professional-grade equipment for collecting genetic material from prize males.
+
+Item Code: M-EXT-2025
+
+Description: A medical-grade collection system designed for safety and hygiene.
+
+Includes:
+
+1x Hydro-dynamic Collection Sleeve (Silicone, Variable Pressure).
+
+1x Cryogenic Storage Flask (Liquid Nitrogen compatible).
+
+1x Hormonal Pheromone Mist (triggers immediate biological response).
+
+Usage: Manual operation required. Recommended frequency: Once per 72-hour cycle to maintain counts.
+
+Price: $1,200
+
+The Matrix Nursery: Gestation Kit (Female)
+Item Code: F-GES-PRO
+
+Description: Isolates pregnant females to prevent tank aggression.
+
+Includes:
+
+Ultrasound Wand (USB-C connection to laptop).
+
+"Calving Cradle" mesh insert to assist newborn surfacing.
+
+Price: $850
+

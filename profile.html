@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile - Dwarf Orca</title>
+  <meta name="description" content="Manage your Dwarf Orca profile." />
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div id="site-header-container"></div>
+
+  <main>
+    <div class="container">
+      <section class="profile-section">
+        <div class="profile-header">
+          <h2 id="profileGreeting">Welcome</h2>
+          <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+
+        <div class="profile-content">
+          <h3>Edit Profile</h3>
+          <form id="profileForm" class="profile-form">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName">
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact Number</label>
+              <input type="tel" id="contact" name="contact">
+            </div>
+            <button type="submit" class="btn">Save Changes</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
+      <p class="disclaimer">This is a joke site. We really don't sell killer whales (miniature or otherwise).</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

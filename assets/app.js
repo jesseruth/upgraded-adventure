@@ -1,3 +1,38 @@
+// Header Management
+class HeaderManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    const headerContainer = document.getElementById('site-header-container');
+    if (!headerContainer) return;
+
+    const path = window.location.pathname;
+    const page = path.split('/').pop() || 'index.html';
+
+    headerContainer.innerHTML = `
+      <header class="site-header">
+        <div class="container">
+          <div class="header-content">
+            <h1 class="logo">🐋 Dwarf Orca</h1>
+            <nav class="nav-links">
+              <a href="index.html" class="${page === 'index.html' || page === '' ? 'active' : ''}">Shop</a>
+              <a href="about.html" class="${page === 'about.html' ? 'active' : ''}">About</a>
+              <a href="faq.html" class="${page === 'faq.html' ? 'active' : ''}">FAQ</a>
+            </nav>
+            <button class="cart-button" id="cartBtn">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+          <p class="tagline">Premium Miniature Killer Whale Collectibles</p>
+        </div>
+      </header>
+    `;
+  }
+}
+
 // Shopping Cart Application
 class ShoppingCart {
   constructor() {
@@ -34,12 +69,28 @@ class ShoppingCart {
 
   renderProducts() {
     const grid = document.getElementById('productsGrid');
-    grid.innerHTML = this.products.map(product => `
+    if (!grid) return;
+    grid.innerHTML = this.products.map(product => {
+      // Build extra details HTML if available
+      let extraDetails = '';
+      if (product.specs) extraDetails += `<div class="product-detail"><strong>Specs:</strong> ${product.specs}</div>`;
+      if (product.leadTime) extraDetails += `<div class="product-detail"><strong>Lead Time:</strong> ${product.leadTime}</div>`;
+      if (product.yield) extraDetails += `<div class="product-detail"><strong>Yield:</strong> ${product.yield}</div>`;
+      if (product.components) extraDetails += `<div class="product-detail"><strong>Components:</strong> ${product.components}</div>`;
+      if (product.software) extraDetails += `<div class="product-detail"><strong>Software:</strong> ${product.software}</div>`;
+      if (product.feedType) extraDetails += `<div class="product-detail"><strong>Feed Type:</strong> ${product.feedType}</div>`;
+      if (product.contents) extraDetails += `<div class="product-detail"><strong>Contents:</strong> ${product.contents}</div>`;
+      if (product.includes) extraDetails += `<div class="product-detail"><strong>Includes:</strong> ${product.includes}</div>`;
+      if (product.usage) extraDetails += `<div class="product-detail"><strong>Usage:</strong> ${product.usage}</div>`;
+
+      return `
       <div class="product-card">
         <div class="product-image">${product.image}</div>
         <div class="product-info">
+          <div class="product-category">${product.category || 'Merchandise'}</div>
           <h3 class="product-name">${product.name}</h3>
           <p class="product-description">${product.description}</p>
+          ${extraDetails}
           <div class="product-price">$${product.price.toFixed(2)}</div>
           <div class="product-stock ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
             ${product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
@@ -51,7 +102,7 @@ class ShoppingCart {
           </div>
         </div>
       </div>
-    `).join('');
+    `}).join('');
 
     // Add event listeners to add to cart buttons
     document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
@@ -143,14 +194,17 @@ class ShoppingCart {
 
   renderCartItems() {
     const cartItemsContainer = document.getElementById('cartItems');
+    if (!cartItemsContainer) return;
     
     if (this.items.length === 0) {
       cartItemsContainer.innerHTML = '<div class="cart-items empty">Your cart is empty</div>';
-      document.getElementById('checkoutBtn').disabled = true;
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) checkoutBtn.disabled = true;
       return;
     }
 
-    document.getElementById('checkoutBtn').disabled = false;
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) checkoutBtn.disabled = false;
 
     cartItemsContainer.innerHTML = this.items.map(item => `
       <div class="cart-item">
@@ -191,12 +245,14 @@ class ShoppingCart {
 
   updateCartTotal() {
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
+    const cartTotal = document.getElementById('cartTotal');
+    if (cartTotal) cartTotal.textContent = `$${total.toFixed(2)}`;
   }
 
   updateCartCount() {
     const count = this.items.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById('cartCount').textContent = count;
+    const cartCount = document.getElementById('cartCount');
+    if (cartCount) cartCount.textContent = count;
   }
 
   openCart() {
@@ -283,6 +339,7 @@ class FAQManager {
 
   renderFAQs() {
     const faqList = document.getElementById('faqList');
+    if (!faqList) return;
     faqList.innerHTML = this.faqs.map((faq, index) => `
       <div class="faq-item" data-id="${faq.id}">
         <div class="faq-question" onclick="toggleFAQ(this)">
@@ -310,6 +367,7 @@ function toggleFAQ(element) {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+  new HeaderManager();
   new ShoppingCart();
   new FAQManager();
 });
