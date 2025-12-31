@@ -15,7 +15,7 @@
       "price": 24.99,
       "image": "🐋",
       "description": "Medium-sized orca companion, huggable and cute",
-      "stock": 0,
+      "stock": 1,
       "category": "Merchandise"
     },
     {
@@ -24,7 +24,7 @@
       "price": 34.99,
       "image": "🐋",
       "description": "Large orca plush, perfect for cuddles",
-      "stock": 0,
+      "stock": 1,
       "category": "Merchandise"
     },
     {
@@ -33,7 +33,7 @@
       "price": 19.99,
       "image": "🐋",
       "description": "Set of 5 miniature killer whale figurines",
-      "stock": 0,
+      "stock": 1,
       "category": "Merchandise"
     },
     {
@@ -42,7 +42,7 @@
       "price": 8.99,
       "image": "📌",
       "description": "Cool enamel pin featuring a killer whale design",
-      "stock": 0,
+      "stock": 1,
       "category": "Merchandise"
     },
     {
@@ -51,7 +51,7 @@
       "price": 49.99,
       "image": "📦",
       "description": "Get everything - plush, figurine, and pin bundle",
-      "stock": 0,
+      "stock": 1,
       "category": "Merchandise"
     },
     {
@@ -73,7 +73,7 @@
       "description": "Bioluminescent epidermal layer. Glows soft blue at night. Nocturnal cycle programmed for evening entertainment.",
       "specs": "L: 35cm  W: 8kg",
       "leadTime": "6 Months (Backorder)",
-      "stock": 0,
+      "stock": 1,
       "category": "Live Animals"
     },
     {
