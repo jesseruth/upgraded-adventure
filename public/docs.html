@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Documentation - Dwarf Orca</title>
+  <meta name="description" content="Technical documentation, unboxing guides, and troubleshooting for Dwarf Orca units." />
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .docs-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .docs-nav {
+      position: sticky;
+      top: 100px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(15,23,42,0.1);
+    }
+    .docs-nav h3 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .docs-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .docs-nav li {
+      margin-bottom: 0.5rem;
+    }
+    .docs-nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      display: block;
+      padding: 0.25rem 0;
+    }
+    .docs-nav a:hover, .docs-nav a.active {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .docs-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(15,23,42,0.1);
+    }
+    .doc-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 120px;
+    }
+    .doc-section h2 {
+      color: var(--accent);
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .doc-section h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .doc-meta {
+      font-family: monospace;
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #475569;
+      border-left: 4px solid var(--accent);
+    }
+    .warning-box {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-left: 4px solid var(--error);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      color: #991b1b;
+    }
+    .warning-box strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 6px;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .ad-placeholder {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      color: #94a3b8;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 2rem 0;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .checklist input[type="checkbox"] {
+      width: 1.2rem;
+      height: 1.2rem;
+      accent-color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .docs-container {
+        grid-template-columns: 1fr;
+      }
+      .docs-nav {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header-container"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Technical Documentation</h2>
+        <p>Official manuals, deployment guides, and troubleshooting for Dwarf Orca units.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <nav class="docs-nav">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#unboxing">Unboxing & Deployment</a></li>
+            <li><a href="#troubleshooting">Day 1 Troubleshooting</a></li>
+            <li><a href="#breeding">Breeding Guide</a></li>
+            <li><a href="#ansible">Ansible Farm Manager</a></li>
+          </ul>
+
+          <div class="ad-placeholder" style="margin-top: 2rem; font-size: 0.8rem;">
+            [AD: UPGRADE TO ORCA-OS PRO]
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="docs-content">
+
+          <!-- AD PLACEHOLDER -->
+          <div class="ad-placeholder">
+            [ADVERTISEMENT: BULK KRILL-KIBBLE™ - 20% OFF FOR ENTERPRISE CLIENTS]
+          </div>
+
+          <!-- Unboxing Manual -->
+          <section id="unboxing" class="doc-section">
+            <h2>Live Unit Receiving Manual</h2>
+            <div class="doc-meta">
+              <strong>Doc ID:</strong> DO-MAN-UNBOX-V4<br>
+              <strong>Rev:</strong> 2025.4<br>
+              <strong>Applicable Models:</strong> Companion Class, Livestock Class
+            </div>
+
+            <div class="warning-box">
+              <strong>⚠️ CRITICAL WARNING</strong>
+              <ul>
+                <li><strong>Time Sensitive:</strong> You have 4 hours from delivery to complete unboxing before oxygen depletion.</li>
+                <li><strong>Do Not Shake:</strong> Violent motion may trigger predatory defense reflex.</li>
+                <li><strong>Temperature:</strong> Ensure tank is stable at 18°C (64°F).</li>
+              </ul>
+            </div>
+
+            <h3>1. Package Contents</h3>
+            <p>Verify immediately upon removing outer seal:</p>
+            <ol>
+              <li><strong>1x Bio-Stasis Bag</strong> (Contains Unit in Sleep-Saline™)</li>
+              <li><strong>1x Vial of "Wake-Up" Reagent</strong> (Red cap)</li>
+              <li><strong>1x NFC Registration Card</strong> (UUID)</li>
+              <li><strong>1x Acclimation Drip Hose</strong></li>
+            </ol>
+
+            <h3>2. Digital Registration (Bash/CLI)</h3>
+            <p>While acclimating, register the livestock UUID to your tank's control system.</p>
+
+            <p><strong>Option B: Terminal (Recommended)</strong><br>
+            If running OrcaOS custom firmware:</p>
+            <div class="code-block">
+# Register the new unit
+./orca-cli register --uuid="WH-2025-X99-AB" --type="companion" --name="Bubbles"
+
+# Verify tank parameters are adjusted for new bio-load
+./orca-cli status --check-oxygen</div>
+
+            <h3>3. Deployment & Waking</h3>
+            <ol>
+              <li><strong>Add Reagent:</strong> Pour Red Vial into bag. Fluid will turn pink. Unit will twitch.</li>
+              <li><strong>Release:</strong> Gently tilt bag. <strong>DO NOT</strong> pour bag water into tank.</li>
+              <li><strong>Observation:</strong> Unit should surface for air within 10-30 minutes.</li>
+            </ol>
+
+            <h3>4. Post-Unboxing Checklist</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" disabled> <strong>First Feed:</strong> Do not feed for 24 hours.</li>
+              <li><input type="checkbox" disabled> <strong>Lighting:</strong> Keep dimmed for 12 hours.</li>
+              <li><input type="checkbox" disabled> <strong>Inventory:</strong> Update <code>inventory/hosts</code> file.</li>
+            </ul>
+          </section>
+
+          <!-- AD PLACEHOLDER -->
+          <div class="ad-placeholder">
+            [ADVERTISEMENT: NEED A BIGGER TANK? SHOP OUR 'OCEAN-VIEW' SERIES]
+          </div>
+
+          <!-- Troubleshooting Guide -->
+          <section id="troubleshooting" class="doc-section">
+            <h2>Day 1 Troubleshooting</h2>
+            <div class="doc-meta">
+              <strong>Doc ID:</strong> DO-TRBL-DAY1-V2<br>
+              <strong>Support Tier:</strong> General Public & Enterprise
+            </div>
+
+            <div class="warning-box">
+              <strong>⚠️ EMERGENCY PROTOCOL</strong>
+              If unit stops breathing (> 3 mins), initiate <strong>Code Blue</strong>. Inject Epinephrine Pen (Yellow Cap) into dorsal fin and call 1-800-WHALE-HELP.
+            </div>
+
+            <h3>Symptom: "Glass Surfing"</h3>
+            <p><strong>Diagnosis:</strong> Boundary Mapping Stress. Unit is confused by glass transparency.</p>
+            <p><strong>Corrective Action:</strong> Run diagnostic script to check ultrasonic barrier.</p>
+            <div class="code-block">
+# Check status of the glass-repellent emitters
+./orca-cli sensor --read --target="ultrasonic_emitter_01"
+
+# Expected Output: STATUS: ACTIVE (Frequency: 45kHz)
+# If INACTIVE, restart the daemon:
+systemctl restart tank-security.service</div>
+
+            <h3>Symptom: Aggression</h3>
+            <p><strong>Diagnosis:</strong> Dominance Assertion. Even "Teacup" breeds are apex predators.</p>
+            <p><strong>Corrective Action:</strong> Older tank controllers may emit a hum that irritates the whale. Patch your Java firmware:</p>
+            <div class="code-block">
+// Check your TankController.java config
+if (sonarFrequency < 20000) {
+    System.out.println("Warning: Low frequency hum detected.");
+    SonarSystem.setFrequency(50000); // Set to silent range
+}</div>
+          </section>
+
+          <!-- Breeding Guide -->
+          <section id="breeding" class="doc-section">
+            <h2>Breeding Guide: The "Cold Water" Method</h2>
+            <p><strong>Objective:</strong> Induce mating cycle in Companion Class whales.</p>
+            <ul>
+              <li><strong>Temperature Drop:</strong> Drop water temp from 22°C to 16°C over 48 hours.</li>
+              <li><strong>Salinity Spike:</strong> Increase salinity by 15%.</li>
+              <li><strong>Java Monitoring:</strong> Run the <code>BreedingMonitor.jar</code> utility to track "bonding behaviors".</li>
+              <li><strong>Success Indicator:</strong> Female creates a "Bubble Nest". Separation required immediately.</li>
+            </ul>
+          </section>
+
+          <!-- Ansible Guide -->
+          <section id="ansible" class="doc-section">
+            <h2>The Ansible "Farm Manager" Playbook</h2>
+            <p>For commercial clients managing 50+ tanks. Don't configure filters manually.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+              <li>Automated pH balancing across all IP-connected tanks.</li>
+              <li>Emergency alert system (pushes to Slack/Email).</li>
+              <li><code>deploy_feed.yml</code> - Synchronizes feeding times.</li>
+            </ul>
+          </section>
+
+          <!-- AD PLACEHOLDER -->
+          <div class="ad-placeholder">
+            [ADVERTISEMENT: RECYCLE YOUR STYROFOAM BOX FOR $5 CREDIT]
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script src="assets/app.js"></script>
+  <script>
+    // Simple scroll spy for navigation
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.doc-section');
+      const navLinks = document.querySelectorAll('.docs-nav a');
+
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

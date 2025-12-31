@@ -1,0 +1,158 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Killer Whale Plush - Small",
+      "price": 14.99,
+      "image": "🐋",
+      "description": "Adorable small orca plushie, perfect for collectors",
+      "stock": 1,
+      "category": "Merchandise"
+    },
+    {
+      "id": 2,
+      "name": "Killer Whale Plush - Medium",
+      "price": 24.99,
+      "image": "🐋",
+      "description": "Medium-sized orca companion, huggable and cute",
+      "stock": 0,
+      "category": "Merchandise"
+    },
+    {
+      "id": 3,
+      "name": "Killer Whale Plush - Large",
+      "price": 34.99,
+      "image": "🐋",
+      "description": "Large orca plush, perfect for cuddles",
+      "stock": 0,
+      "category": "Merchandise"
+    },
+    {
+      "id": 4,
+      "name": "Killer Whale Figurine Set",
+      "price": 19.99,
+      "image": "🐋",
+      "description": "Set of 5 miniature killer whale figurines",
+      "stock": 0,
+      "category": "Merchandise"
+    },
+    {
+      "id": 5,
+      "name": "Orca Enamel Pin",
+      "price": 8.99,
+      "image": "📌",
+      "description": "Cool enamel pin featuring a killer whale design",
+      "stock": 0,
+      "category": "Merchandise"
+    },
+    {
+      "id": 6,
+      "name": "Killer Whale Merchandise Bundle",
+      "price": 49.99,
+      "image": "📦",
+      "description": "Get everything - plush, figurine, and pin bundle",
+      "stock": 0,
+      "category": "Merchandise"
+    },
+    {
+      "id": 7,
+      "name": "The Classic \"Panda\"",
+      "price": 4500.00,
+      "image": "🐋",
+      "description": "The iconic black and white pattern. High intelligence, capable of solving puzzles. Recognizes up to 40 distinct user faces.",
+      "specs": "L: 45cm  W: 12kg",
+      "leadTime": "3 Weeks",
+      "stock": 5,
+      "category": "Live Animals"
+    },
+    {
+      "id": 8,
+      "name": "Neon-Striped \"Vegas\"",
+      "price": 12000.00,
+      "image": "🌟",
+      "description": "Bioluminescent epidermal layer. Glows soft blue at night. Nocturnal cycle programmed for evening entertainment.",
+      "specs": "L: 35cm  W: 8kg",
+      "leadTime": "6 Months (Backorder)",
+      "stock": 0,
+      "category": "Live Animals"
+    },
+    {
+      "id": 9,
+      "name": "The \"Lap-Whale\" (Teacup)",
+      "price": 8200.00,
+      "image": "☕",
+      "description": "Our smallest variant. Extremely docile. Requires minimal tank space. Note: Cannot hunt live prey; must be hand-fed.",
+      "specs": "L: 20cm  W: 3.5kg",
+      "leadTime": "8 Weeks",
+      "stock": 3,
+      "category": "Live Animals"
+    },
+    {
+      "id": 10,
+      "name": "Barnyard Blue (Pod of 10)",
+      "price": 950.00,
+      "image": "🥩",
+      "description": "The standard agricultural unit. Accelerated growth hormone receptors. Reaches harvest maturity in just 14 weeks.",
+      "yield": "18kg Meat",
+      "leadTime": "Immediate",
+      "stock": 100,
+      "category": "Livestock"
+    },
+    {
+      "id": 11,
+      "name": "Wagyu-Whale™ (Pod of 10)",
+      "price": 2400.00,
+      "image": "🍖",
+      "description": "Genetically limited movement for maximum fat retention. Rich, buttery texture. Requires high-calorie finishing feed.",
+      "yield": "22kg Meat",
+      "leadTime": "2 Weeks",
+      "stock": 20,
+      "category": "Livestock"
+    },
+    {
+      "id": 12,
+      "name": "Standard Feeder Kit (Auto-Dispense)",
+      "price": 199.00,
+      "image": "🤖",
+      "description": "Proprietary blends to ensure health and maximize output.",
+      "components": "5L Hopper, Wifi-enabled timer.",
+      "software": "Compatible with our Node.js mobile app for remote feeding.",
+      "feedType": "Accepts \"Krill-Kibble™\" (Dry) or \"Plankton-Paste\" (Wet).",
+      "stock": 50,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 13,
+      "name": "The \"Finishing\" Kit (Livestock Only)",
+      "price": 450.00,
+      "image": "💉",
+      "description": "Use during the final 4 weeks before harvest to increase caloric density.",
+      "contents": "High-fat Herring Oil injector, automated bash script for increasing feeding frequency based on weight sensor data.",
+      "stock": 30,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 14,
+      "name": "The Sire Series: Genetic Extraction Kit (Male)",
+      "price": 1200.00,
+      "image": "🧬",
+      "description": "Professional-grade equipment for collecting genetic material from prize males. A medical-grade collection system designed for safety and hygiene.",
+      "sku": "M-EXT-2025",
+      "includes": "1x Hydro-dynamic Collection Sleeve (Silicone, Variable Pressure), 1x Cryogenic Storage Flask (Liquid Nitrogen compatible), 1x Hormonal Pheromone Mist (triggers immediate biological response).",
+      "usage": "Manual operation required. Recommended frequency: Once per 72-hour cycle to maintain counts.",
+      "stock": 10,
+      "category": "Genetics"
+    },
+    {
+      "id": 15,
+      "name": "The Matrix Nursery: Gestation Kit (Female)",
+      "price": 850.00,
+      "image": "🏥",
+      "description": "Isolates pregnant females to prevent tank aggression.",
+      "sku": "F-GES-PRO",
+      "includes": "Ultrasound Wand (USB-C connection to laptop), \"Calving Cradle\" mesh insert to assist newborn surfacing.",
+      "stock": 15,
+      "category": "Genetics"
+    }
+  ]
+}
