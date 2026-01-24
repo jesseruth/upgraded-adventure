@@ -195,9 +195,15 @@
               <li><strong>1x NFC Registration Card</strong> (UUID)</li>
               <li><strong>1x Acclimation Drip Hose</strong></li>
             </ol>
+            
+            <h3>2. Inspection & Bioscan</h3>
+            <p>Before breaking the inner seal, inspect the Bio-Stasis Bag. The fluid should be clear. Look for the slow, rhythmic gill/blowhole pulse (approx. 1 per 45 seconds).</p>
 
-            <h3>2. Digital Registration (Bash/CLI)</h3>
-            <p>While acclimating, register the livestock UUID to your tank's control system.</p>
+            <h3>3. The Acclimation Process (Drip Method)</h3>
+            <p>Failure to acclimate may result in pH shock. Float the sealed bag in your tank for 20 minutes to equalize temperature. Then, secure the bag to the rim and use the drip hose to slowly introduce tank water into the bag for 30 minutes.</p>
+
+            <h3>4. Digital Registration (Bash/CLI)</h3>
+            <p>While the unit acclimates, register its UUID to your tank's control system.</p>
 
             <p><strong>Option B: Terminal (Recommended)</strong><br>
             If running OrcaOS custom firmware:</p>
@@ -208,14 +214,14 @@
 # Verify tank parameters are adjusted for new bio-load
 ./orca-cli status --check-oxygen</div>
 
-            <h3>3. Deployment & Waking</h3>
+            <h3>5. Deployment & Waking</h3>
             <ol>
               <li><strong>Add Reagent:</strong> Pour Red Vial into bag. Fluid will turn pink. Unit will twitch.</li>
               <li><strong>Release:</strong> Gently tilt bag. <strong>DO NOT</strong> pour bag water into tank.</li>
               <li><strong>Observation:</strong> Unit should surface for air within 10-30 minutes.</li>
             </ol>
 
-            <h3>4. Post-Unboxing Checklist</h3>
+            <h3>6. Post-Unboxing Checklist</h3>
             <ul class="checklist">
               <li><input type="checkbox" disabled> <strong>First Feed:</strong> Do not feed for 24 hours.</li>
               <li><input type="checkbox" disabled> <strong>Lighting:</strong> Keep dimmed for 12 hours.</li>
@@ -236,9 +242,13 @@
               If unit stops breathing (> 3 mins), initiate <strong>Code Blue</strong>. Inject Epinephrine Pen (Yellow Cap) into dorsal fin and call 1-800-WHALE-HELP.
             </div>
 
-            <h3>Symptom: "Glass Surfing"</h3>
+            <h3>Symptom: Unit is Listing / Swimming Upside Down</h3>
+            <p><strong>Diagnosis:</strong> Cryo-Bladder Dysfunction. The gas bladder fails to re-pressurize after stasis. This usually resolves in 2 hours.</p>
+            <p><strong>Corrective Actions:</strong> Turn your tank's wave-maker to "Storm Mode". If it persists > 4 hours, increase salinity to <strong>1.026 SG</strong>.</p>
+            
+            <h3>Symptom: "Glass Surfing" (Pacing the Tank Walls)</h3>
             <p><strong>Diagnosis:</strong> Boundary Mapping Stress. Unit is confused by glass transparency.</p>
-            <p><strong>Corrective Action:</strong> Run diagnostic script to check ultrasonic barrier.</p>
+            <p><strong>Corrective Action:</strong> Tape paper to the outside of the tank for 24 hours. You can also run a diagnostic script to check the ultrasonic barrier:</p>
             <div class="code-block">
 # Check status of the glass-repellent emitters
 ./orca-cli sensor --read --target="ultrasonic_emitter_01"
@@ -247,15 +257,23 @@
 # If INACTIVE, restart the daemon:
 systemctl restart tank-security.service</div>
 
-            <h3>Symptom: Aggression</h3>
+            <h3>Symptom: Refusal to Surface (Sitting on Bottom)</h3>
+            <p><strong>Diagnosis:</strong> Post-Sedation Heavy Sleep. The unit is groggy.</p>
+            <p><strong>Corrective Actions:</strong> Lower tank temperature by 2°C rapidly. Gently nudge the tail fluke with sanitized aquarium tongs if it does not react.</p>
+
+            <h3>Symptom: Aggression (Biting Glass or Other Tank Mates)</h3>
             <p><strong>Diagnosis:</strong> Dominance Assertion. Even "Teacup" breeds are apex predators.</p>
-            <p><strong>Corrective Action:</strong> Older tank controllers may emit a hum that irritates the whale. Patch your Java firmware:</p>
+            <p><strong>Corrective Action:</strong> Isolate the unit with an acrylic divider. Older tank controllers may also emit an irritating hum; patch your Java firmware:</p>
             <div class="code-block">
 // Check your TankController.java config
 if (sonarFrequency < 20000) {
     System.out.println("Warning: Low frequency hum detected.");
     SonarSystem.setFrequency(50000); // Set to silent range
 }</div>
+
+            <h3>Symptom: Unit "Clicks" Constantly at the User</h3>
+            <p><strong>Diagnosis:</strong> Imprinting Attempt. The whale is using echolocation to recognize you as the provider.</p>
+            <p><strong>Corrective Actions:</strong> This is a good sign. Stand still and allow the unit to scan you. Speak softly to help it build a voice-print.</p>
           </section>
 
           <!-- Breeding Guide -->
