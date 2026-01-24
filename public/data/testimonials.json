@@ -1,0 +1,214 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Klaus H.",
+      "location": "Berlin, DE",
+      "avatar": "👨‍💻",
+      "stars": 5,
+      "date": "2025-11-20",
+      "title": "A paradigm shift in domestic companionship!",
+      "text": "My Teacup Orca, 'U-boat', has integrated seamlessly into my smart home ecosystem. Its ambient clicks have a calming effect during my coding sessions. The Ansible playbook for feeding is a work of genius. 10/10 would bio-engineer again."
+    },
+    {
+      "id": 2,
+      "name": "Anya Ivanova",
+      "location": "Kyoto, JP",
+      "avatar": "👩‍🎨",
+      "stars": 5,
+      "date": "2025-11-18",
+      "title": "A living work of art.",
+      "text": "The bioluminescent patterns on my 'Calico Koi' model are simply breathtaking. It's more than a pet; it's an interactive art installation. The gentle sonar clicks provide the perfect ambient sound for my studio."
+    },
+    {
+      "id": 3,
+      "name": "Cmdr. Jackson Thorne (Ret.)",
+      "location": "San Diego, USA",
+      "avatar": "👨‍✈️",
+      "stars": 4,
+      "date": "2025-11-15",
+      "title": "Efficient and reliable protein source.",
+      "text": "The 'Barnyard Blue' line is a logistical marvel. My vertical aquaculture farm's protein yield has increased by 200%. The units are robust and require minimal oversight. Docked one star because their sonar occasionally interferes with my short-wave radio."
+    },
+    {
+      "id": 4,
+      "name": "Brenda P.",
+      "location": "Ohio, USA",
+      "avatar": "👩‍🌾",
+      "stars": 1,
+      "date": "2025-11-12",
+      "title": "It ate my prize-winning Koi.",
+      "text": "The brochure said 'compatible with most aquatic life'. It failed to mention that 'compatible' means 'it will eat them'. My beautiful koi, 'Sunshine', is gone. My kids are crying. Customer support told me this was 'asserting dominance' and offered me a 10% discount on krill kibble. Never again."
+    },
+    {
+      "id": 5,
+      "name": "Chadwick 'Chad' B.",
+      "location": "Arizona, USA",
+      "avatar": "👨‍🎓",
+      "stars": 2,
+      "date": "2025-11-10",
+      "title": "Not a great party animal tbh",
+      "text": "I got 'Orca-bro' for the frat house thinking it would be awesome. It mostly just hides when we play music and the 'Wake-Up Reagent' does NOT work on hungover sophomores. Kinda lame."
+    },
+    {
+      "id": 6,
+      "name": "Dr. Aris Thorne",
+      "location": "Geneva, CH",
+      "avatar": "👩‍🔬",
+      "stars": 5,
+      "date": "2025-11-08",
+      "title": "Genetically Stable and Remarkable",
+      "text": "The stability of the Grotowski Minimization Vector is astounding. I've been sequencing my unit's genome for months and have found no signs of degradation or mutation. A true triumph of controlled genetic expression."
+    },
+    {
+      "id": 7,
+      "name": "Anonymous",
+      "location": "Unknown",
+      "avatar": "🤖",
+      "stars": 1,
+      "date": "2025-11-05",
+      "title": "My Roomba is gone.",
+      "text": "It jumped out of the tank, dragged my Roomba into the water, and now all it does is click triumphantly. How is this my life?"
+    },
+    {
+      "id": 8,
+      "name": "Moonflower",
+      "location": "Oregon, USA",
+      "avatar": "🧘‍♀️",
+      "stars": 3,
+      "date": "2025-11-02",
+      "title": "Its aura is a bit aggressive.",
+      "text": "I feel like 'Starchild' has a very dominant energy. I've tried playing calming whale sounds, but it just seems to get agitated. It has, however, eaten all the algae in the tank, so that's a plus."
+    },
+    {
+      "id": 9,
+      "name": "BigSal's Aquafarm",
+      "location": "Off-shore, Pacific",
+      "avatar": "🏭",
+      "stars": 5,
+      "date": "2025-10-30",
+      "title": "BARNYARD BLUE IS THE FUTURE!",
+      "text": "TRIPLED OUR OUTPUT. TRADING ALL OUR TUNA LICENSES FOR THIS. THANKS DR. G!"
+    },
+    {
+      "id": 10,
+      "name": "Gamer_Girl_42",
+      "location": "Online",
+      "avatar": "🎮",
+      "stars": 4,
+      "date": "2025-10-28",
+      "title": "My stream loves 'Pog-Champ'",
+      "text": "My subscribers love when Pog-Champ is in the background. He sometimes clicks along with the victory music. Lost one star because he bit my headset cable. Replacement is expensive."
+    },
+    {
+      "id": 11,
+      "name": "Janet",
+      "location": "Florida, USA",
+      "avatar": "🤷‍♀️",
+      "stars": 1,
+      "date": "2025-10-25",
+      "title": "It escaped.",
+      "text": "I don't know how. The tank lid was secure. Woke up this morning and it's just gone. I live three miles from the coast. I'm not saying it's walking, but... I'm a little scared."
+    },
+    {
+      "id": 12,
+      "name": "Mr. Fitzwilliam",
+      "location": "London, UK",
+      "avatar": "🤵",
+      "stars": 2,
+      "date": "2025-10-22",
+      "title": "Refuses to eat from a silver platter.",
+      "text": "The unit, designated 'Lord Finneas', displays a shocking lack of decorum. It seems to prefer its krill directly on the tank floor, like a commoner. Unacceptable for a household of our standing."
+    },
+    {
+      "id": 13,
+      "name": "ConspiracyCarl",
+      "location": "Wyoming, USA",
+      "avatar": "🕵️",
+      "stars": 1,
+      "date": "2025-10-20",
+      "title": "It's a government drone.",
+      "text": "The 'clicks' aren't random. It's Morse code. It's communicating with the smart fridge. It knows I haven't paid my taxes. DO NOT BUY. THEY ARE LISTENING."
+    },
+    {
+      "id": 14,
+      "name": "Tammy L.",
+      "location": "Suburbs, USA",
+      "avatar": "👩‍👧‍👦",
+      "stars": 5,
+      "date": "2025-10-18",
+      "title": "The kids love 'Splashy' more than the dog!",
+      "text": "It's so much cleaner than our golden retriever! The kids spend hours watching him. It's educational, clean, and completely silent. Best pet we've ever owned."
+    },
+    {
+      "id": 15,
+      "name": "H4x0r_1337",
+      "location": "Undisclosed",
+      "avatar": "👾",
+      "stars": 4,
+      "date": "2025-10-15",
+      "title": "OrcaOS is surprisingly secure",
+      "text": "Tried to get root access on my tank controller to overclock the wave-maker. The built-in security is no joke. Impressive firewalls. Couldn't jailbreak it, but I respect the effort. The orca itself is cool too, I guess."
+    },
+    {
+      "id": 16,
+      "name": "GourmetGary",
+      "location": "Paris, FR",
+      "avatar": "👨‍🍳",
+      "stars": 5,
+      "date": "2025-10-12",
+      "title": "Exquisite mouthfeel, delicate yet firm.",
+      "text": "The 'Barnyard Blue' sirloin has a unique flavor profile. A hint of brine, with the richness of wagyu. Pan-seared with a lemon-dill reduction, it is simply divine. A new staple in my Michelin star kitchen."
+    },
+    {
+      "id": 17,
+      "name": "SadBoi_Poet",
+      "location": "Seattle, USA",
+      "avatar": "🖤",
+      "stars": 3,
+      "date": "2025-10-09",
+      "title": "Its cheerful demeanor is distracting.",
+      "text": "I acquired 'Void-swimmer' to contemplate the endless abyss. Its playful nature and happy clicks are not conducive to writing my melancholic poetry. It is, however, objectively adorable, which is artistically frustrating."
+    },
+    {
+      "id": 18,
+      "name": "CEO_Exec",
+      "location": "New York, USA",
+      "avatar": "💼",
+      "stars": 5,
+      "date": "2025-10-06",
+      "title": "The ultimate corporate status symbol.",
+      "text": "Forget the corner office. Having a 'Black Diamond' edition Dwarf Orca in my lobby is the real power move. Clients are mesmerized. It closes deals for me."
+    },
+    {
+      "id": 19,
+      "name": "MinimalistMandy",
+      "location": "Stockholm, SE",
+      "avatar": "🏠",
+      "stars": 2,
+      "date": "2025-10-03",
+      "title": "Too much clutter.",
+      "text": "The unit itself is a marvel of simplicity. But the required support systems—the filters, the heater, the protein skimmer, the auto-feeder—it's all just so much... stuff. It disrupts my clean, minimalist aesthetic."
+    },
+    {
+      "id": 20,
+      "name": "Karen",
+      "location": "Everywhere",
+      "avatar": "👱‍♀️",
+      "stars": 1,
+      "date": "2025-10-01",
+      "title": "I want to speak to Dr. Grotowski's MANAGER.",
+      "text": "My 'Teacup' Orca is CLEARLY bigger than the one my neighbor got. This is false advertising. I measured it. It's at least 2 centimeters longer. I have been on hold with support for 15 minutes and this is UNACCEPTABLE."
+    },
+    {
+      "id": 21,
+      "name": "SpaceX_Engineer",
+      "location": "Mars Colony Alpha",
+      "avatar": "🚀",
+      "stars": 5,
+      "date": "2025-09-28",
+      "title": "Impressive cryo-stasis technology.",
+      "text": "The 'Sleep-Saline™' fluid kept our unit in perfect stasis for the entire 6-month journey to Mars. Re-animation was flawless. 'Rover' is now happily swimming in the habitat's main water reclamation tank, providing companionship and vital data on zero-g biology."
+    }
+  ]
+}

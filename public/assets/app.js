@@ -29,6 +29,7 @@ class LayoutManager {
               <a href="index.html" class="${page === 'index.html' || page === '' ? 'active' : ''}">Shop</a>
               <a href="about.html" class="${page === 'about.html' ? 'active' : ''}">About</a>
               <a href="faq.html" class="${page === 'faq.html' ? 'active' : ''}">FAQ</a>
+              <a href="testimonials.html" class="${page === 'testimonials.html' ? 'active' : ''}">Testimonials</a>
               <a href="docs.html" class="${page === 'docs.html' ? 'active' : ''}" style="font-family: monospace; background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 4px;">{docs}</a>
               ${authLink}
             </nav>
@@ -495,6 +496,57 @@ class ShoppingCart {
   }
 }
 
+// Testimonial Management
+class TestimonialManager {
+  constructor() {
+    this.init();
+  }
+
+  async init() {
+    const container = document.getElementById('testimonialsContainer');
+    if (!container) return; // Only run on testimonials page
+
+    try {
+      const response = await fetch('data/testimonials.json');
+      if (!response.ok) throw new Error('Failed to load testimonials');
+      const data = await response.json();
+      this.renderTestimonials(data.testimonials || [], container);
+    } catch (error) {
+      console.error('Error loading testimonials:', error);
+      container.innerHTML = '<p>Could not load testimonials at this time.</p>';
+    }
+  }
+
+  renderStars(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+      stars += i <= rating ? '★' : '☆';
+    }
+    return stars;
+  }
+
+  renderTestimonials(testimonials, container) {
+    container.innerHTML = testimonials.map(item => `
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">${item.avatar}</div>
+          <div class="testimonial-user-info">
+            <h3>${item.name}</h3>
+            <div class="location">${item.location} | ${item.date}</div>
+          </div>
+          <div class="testimonial-rating">
+            <div class="stars">${this.renderStars(item.stars)}</div>
+          </div>
+        </div>
+        <div class="testimonial-body">
+          <h4>${item.title}</h4>
+          <p>${item.text}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
 // FAQ Management
 class FAQManager {
   constructor() {
@@ -555,6 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new LayoutManager(); // Injects Header, Footer, Modals
   new AuthManager();
   new ShoppingCart();
+  new TestimonialManager();
   new FAQManager();
 });
 
