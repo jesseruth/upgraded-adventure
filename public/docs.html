@@ -158,7 +158,7 @@
         <nav class="docs-nav">
           <h3>Contents</h3>
           <ul>
-            <li><a href="#unboxing">Unboxing & Deployment</a></li>
+            <li><a href="#unboxing">Unboxing &amp; Deployment</a></li>
             <li><a href="#troubleshooting">Day 1 Troubleshooting</a></li>
             <li><a href="#breeding">Breeding Guide</a></li>
             <li><a href="#ansible">Ansible Farm Manager</a></li>
@@ -196,7 +196,7 @@
               <li><strong>1x Acclimation Drip Hose</strong></li>
             </ol>
             
-            <h3>2. Inspection & Bioscan</h3>
+            <h3>2. Inspection &amp; Bioscan</h3>
             <p>Before breaking the inner seal, inspect the Bio-Stasis Bag. The fluid should be clear. Look for the slow, rhythmic gill/blowhole pulse (approx. 1 per 45 seconds).</p>
 
             <h3>3. The Acclimation Process (Drip Method)</h3>
@@ -214,7 +214,7 @@
 # Verify tank parameters are adjusted for new bio-load
 ./orca-cli status --check-oxygen</div>
 
-            <h3>5. Deployment & Waking</h3>
+            <h3>5. Deployment &amp; Waking</h3>
             <ol>
               <li><strong>Add Reagent:</strong> Pour Red Vial into bag. Fluid will turn pink. Unit will twitch.</li>
               <li><strong>Release:</strong> Gently tilt bag. <strong>DO NOT</strong> pour bag water into tank.</li>
@@ -234,17 +234,17 @@
             <h2>Day 1 Troubleshooting</h2>
             <div class="doc-meta">
               <strong>Doc ID:</strong> DO-TRBL-DAY1-V2<br>
-              <strong>Support Tier:</strong> General Public & Enterprise
+              <strong>Support Tier:</strong> General Public &amp; Enterprise
             </div>
 
             <div class="warning-box">
               <strong>⚠️ EMERGENCY PROTOCOL</strong>
-              If unit stops breathing (> 3 mins), initiate <strong>Code Blue</strong>. Inject Epinephrine Pen (Yellow Cap) into dorsal fin and call 1-800-WHALE-HELP.
+              If unit stops breathing (&gt; 3 mins), initiate <strong>Code Blue</strong>. Inject Epinephrine Pen (Yellow Cap) into dorsal fin and call 1-800-WHALE-HELP.
             </div>
 
             <h3>Symptom: Unit is Listing / Swimming Upside Down</h3>
             <p><strong>Diagnosis:</strong> Cryo-Bladder Dysfunction. The gas bladder fails to re-pressurize after stasis. This usually resolves in 2 hours.</p>
-            <p><strong>Corrective Actions:</strong> Turn your tank's wave-maker to "Storm Mode". If it persists > 4 hours, increase salinity to <strong>1.026 SG</strong>.</p>
+            <p><strong>Corrective Actions:</strong> Turn your tank's wave-maker to "Storm Mode". If it persists &gt; 4 hours, increase salinity to <strong>1.026 SG</strong>.</p>
             
             <h3>Symptom: "Glass Surfing" (Pacing the Tank Walls)</h3>
             <p><strong>Diagnosis:</strong> Boundary Mapping Stress. Unit is confused by glass transparency.</p>
@@ -266,7 +266,7 @@ systemctl restart tank-security.service</div>
             <p><strong>Corrective Action:</strong> Isolate the unit with an acrylic divider. Older tank controllers may also emit an irritating hum; patch your Java firmware:</p>
             <div class="code-block">
 // Check your TankController.java config
-if (sonarFrequency < 20000) {
+if (sonarFrequency &lt; 20000) {
     System.out.println("Warning: Low frequency hum detected.");
     SonarSystem.setFrequency(50000); // Set to silent range
 }</div>
