@@ -153,6 +153,318 @@
       "includes": "Ultrasound Wand (USB-C connection to laptop), \"Calving Cradle\" mesh insert to assist newborn surfacing.",
       "stock": 15,
       "category": "Genetics"
+    },
+    {
+      "id": 16,
+      "name": "Arctic Ghost (Albino Variant)",
+      "price": 25000.00,
+      "image": "👻",
+      "description": "A stunning and rare all-white morph. Extremely sensitive to light, requires a shaded tank environment. Prized by collectors for its ethereal beauty.",
+      "specs": "L: 40cm  W: 10kg",
+      "leadTime": "12 Months (Waiting List)",
+      "stock": 0,
+      "category": "Live Animals"
+    },
+    {
+      "id": 17,
+      "name": "Deep Trench Stalker",
+      "price": 18500.00,
+      "image": "👹",
+      "description": "Matte black skin with bioluminescent red angler. Adapted for low-light environments, perfect for home theaters or studies. Naturally shy.",
+      "specs": "L: 50cm  W: 15kg",
+      "leadTime": "4 Months",
+      "stock": 2,
+      "category": "Live Animals"
+    },
+    {
+      "id": 18,
+      "name": "Coral Reef Chameleon",
+      "price": 32000.00,
+      "image": "🎨",
+      "description": "Features bio-engineered chromatophores allowing it to slowly shift colors to match its environment. A true marvel of genetic artistry.",
+      "specs": "L: 38cm  W: 9kg",
+      "leadTime": "9 Months",
+      "stock": 1,
+      "category": "Live Animals"
+    },
+    {
+      "id": 19,
+      "name": "The 'Gaffer' (Old Salt Edition)",
+      "price": 6500.00,
+      "image": "⚓",
+      "description": "A grizzled, cosmetically scarred variant bred for character. Cantankerous but fiercely loyal once imprinted. Smells vaguely of sea shanties.",
+      "specs": "L: 55cm  W: 18kg",
+      "leadTime": "4 Weeks",
+      "stock": 4,
+      "category": "Live Animals"
+    },
+    {
+      "id": 20,
+      "name": "The 'Ronin' (Wanderer)",
+      "price": 9500.00,
+      "image": "🉐",
+      "description": "A solitary, stoic breed with a single white marking over one eye. Prefers to be the only unit in a tank. For the discerning, introspective owner.",
+      "specs": "L: 42cm  W: 11kg",
+      "leadTime": "6 Weeks",
+      "stock": 2,
+      "category": "Live Animals"
+    },
+    {
+      "id": 21,
+      "name": "CEO's 'Black Diamond' Edition",
+      "price": 50000.00,
+      "image": "💎",
+      "description": "The ultimate status symbol. Sleek, all-black, with a subtle iridescent sheen. Genetically programmed for calm, gliding movements. A living piece of minimalist art for your corporate lobby.",
+      "specs": "L: 60cm  W: 20kg",
+      "leadTime": "10 Months",
+      "stock": 1,
+      "category": "Live Animals"
+    },
+    {
+      "id": 22,
+      "name": "Pharma-Whale™ (B2B Research Unit)",
+      "price": 75000.00,
+      "image": "🔬",
+      "description": "Not for consumption or companionship. Engineered to produce specific monoclonal antibodies for pharmaceutical research. Sold only to licensed laboratories.",
+      "yield": "Variable Protein Output",
+      "leadTime": "Project-based",
+      "stock": 5,
+      "category": "Livestock"
+    },
+    {
+      "id": 23,
+      "name": "Imperial Roe-Whale (Female)",
+      "price": 4800.00,
+      "image": "👑",
+      "description": "Female-only line engineered for rapid, high-yield roe production. The resulting 'Whale Caviar' is a globally sought-after delicacy.",
+      "yield": "2kg Roe / 6 weeks",
+      "leadTime": "3 Weeks",
+      "stock": 12,
+      "category": "Livestock"
+    },
+    {
+      "id": 24,
+      "name": "Krill-Kibble™ (15kg Bulk Bag)",
+      "price": 120.00,
+      "image": "🧱",
+      "description": "Our standard, nutritionally complete dry food in a cost-effective bulk size. For multi-unit owners and commercial farms.",
+      "contents": "15kg vacuum-sealed bag.",
+      "stock": 200,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 25,
+      "name": "Plankton-Paste™ Subscription (Monthly)",
+      "price": 45.00,
+      "image": "튜브",
+      "description": "A monthly subscription box of our high-moisture Plankton-Paste™. Ensures freshness and is ideal for Teacup breeds or units with dental issues. Price per month.",
+      "contents": "30x Single-serving tubes.",
+      "stock": 100,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 26,
+      "name": "Vibrance-Max Color Enhancing Feed",
+      "price": 75.00,
+      "image": "✨",
+      "description": "Feed laced with proprietary carotenoids and minerals to make the colors on our designer breeds (Vegas, Chameleon) more vibrant.",
+      "contents": "1kg resealable pouch.",
+      "stock": 40,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 27,
+      "name": "Live Feeder Shrimp Colony Kit",
+      "price": 99.00,
+      "image": "🦐",
+      "description": "A starter kit for owners who want to provide live food for enrichment. Promotes natural hunting behaviors. Self-sustaining with minimal care.",
+      "includes": "Breeding tank, initial shrimp colony, algae wafers.",
+      "stock": 35,
+      "category": "Nutrition & Feeding"
+    },
+    {
+      "id": 28,
+      "name": "CRISPR-Cas14 DIY Kit ('Tiger Stripe' Cartridge)",
+      "price": 4500.00,
+      "image": "🐯",
+      "description": "For advanced hobbyists only. Apply cosmetic genetic modifications to your own stock. Requires purchase of our sterile application gun. Dwarf Orca is not liable for misuse.",
+      "sku": "DIY-CRISPR-TGR",
+      "includes": "1x 'Tiger Stripe' gene-sequence cartridge, 10x sterile micro-darts.",
+      "stock": 5,
+      "category": "Genetics"
+    },
+    {
+      "id": 29,
+      "name": "Grotowski Vector Purity Test (Mail-in)",
+      "price": 250.00,
+      "image": "🧪",
+      "description": "Ensure your prized unit is free of genetic drift or illegal third-party modifications. Mail in a water sample containing skin cells, receive a certified report in 2 weeks.",
+      "sku": "TEST-GV-PURE",
+      "includes": "1x sterile collection vial, prepaid bio-hazard return mailer.",
+      "stock": 100,
+      "category": "Genetics"
+    },
+    {
+      "id": 30,
+      "name": "OrcaOS Smart Tank Controller v3.0",
+      "price": 799.00,
+      "image": "🖥️",
+      "description": "The brain of your aquarium. Automates pH, temperature, salinity, and feeding schedules. Provides real-time alerts to your mobile device.",
+      "software": "OrcaOS v3.2 (Debian-based), SSH enabled.",
+      "stock": 25,
+      "category": "Tank & Environment"
+    },
+    {
+      "id": 31,
+      "name": "Wave-Maker Pro ('Storm Mode' enabled)",
+      "price": 349.00,
+      "image": "🌊",
+      "description": "High-powered water circulation pump. Essential for correcting Cryo-Bladder Dysfunction as per our troubleshooting guide. 'Storm Mode' generates turbulent flow.",
+      "specs": "Up to 5000 GPH flow rate.",
+      "stock": 40,
+      "category": "Tank & Environment"
+    },
+    {
+      "id": 32,
+      "name": "Ultrasonic Containment Field Emitter (Pair)",
+      "price": 220.00,
+      "image": "🔊",
+      "description": "Emits a high-frequency field that is imperceptible to humans but discourages 'glass surfing' behavior in new units. A humane training tool.",
+      "specs": "45kHz frequency output.",
+      "stock": 60,
+      "category": "Tank & Environment"
+    },
+    {
+      "id": 33,
+      "name": "Holographic Kelp Forest Projector",
+      "price": 499.00,
+      "image": "🏞️",
+      "description": "For tank enrichment. Projects a calming, interactive 3D kelp forest. The unit can swim through the light beams. Reduces stress in smaller tanks.",
+      "software": "Includes 5 environments: Kelp Forest, Open Ocean, Coral Reef, Arctic Shelf, Shipwreck.",
+      "stock": 18,
+      "category": "Tank & Environment"
+    },
+    {
+      "id": 34,
+      "name": "Auto-Doc Medical Injection System",
+      "price": 1100.00,
+      "image": "✚",
+      "description": "For remote health management of high-value assets. Connects to OrcaOS and can be programmed to dispense supplements or emergency epinephrine based on biosensor data.",
+      "sku": "SYS-MED-INJECT",
+      "includes": "Controller, 2x injection arms, 10x sterile medical darts.",
+      "stock": 10,
+      "category": "Tank & Environment"
+    },
+    {
+      "id": 35,
+      "name": "Dr. Grotowski Action Figure (w/ Lab Coat)",
+      "price": 39.99,
+      "image": "👩‍🔬",
+      "description": "Collectible action figure of our beloved founder, Dr. Seraphina 'Phin' Grotowski. Comes with a miniature 'Subject Zero' and a detachable lab coat.",
+      "stock": 150,
+      "category": "Merchandise"
+    },
+    {
+      "id": 36,
+      "name": "'Barnyard Blue' Branded Steak Knives (Set of 4)",
+      "price": 89.99,
+      "image": "🔪",
+      "description": "The perfect way to enjoy your harvest. German steel, serrated edge, with the Dwarf Orca logo tastefully laser-etched on the blade.",
+      "stock": 75,
+      "category": "Merchandise"
+    },
+    {
+      "id": 37,
+      "name": "'I ❤️ My Lap-Whale' Bumper Sticker",
+      "price": 4.99,
+      "image": "❤️",
+      "description": "Show the world your love for your miniature aquatic companion. Weather-resistant vinyl.",
+      "stock": 500,
+      "category": "Merchandise"
+    },
+    {
+      "id": 38,
+      "name": "The Jester (Calico)",
+      "price": 11500.00,
+      "image": "🤡",
+      "description": "Unpredictable orange, black, and white patterns make each unit unique. Known for their playful and mischievous personalities. Requires extra enrichment toys.",
+      "specs": "L: 40cm  W: 10kg",
+      "leadTime": "5 Months",
+      "stock": 2,
+      "category": "Live Animals"
+    },
+    {
+      "id": 39,
+      "name": "Omega Yield Pod (Pack of 20)",
+      "price": 1800.00,
+      "image": "🐟",
+      "description": "Specifically engineered for an extremely high Omega-3 fatty acid content. The resulting meat is marketed as a premium health food product. A favorite of boutique restaurants.",
+      "yield": "15kg Meat / unit",
+      "leadTime": "Immediate",
+      "stock": 40,
+      "category": "Livestock"
+    },
+    {
+      "id": 40,
+      "name": "Kelp Forest Stalker",
+      "price": 7200.00,
+      "image": "🌿",
+      "description": "A variant with a mottled green and brown skin pattern, providing excellent camouflage in heavily planted aquariums. A shy but fascinating hunter.",
+      "specs": "L: 48cm  W: 13kg",
+      "leadTime": "3 Weeks",
+      "stock": 6,
+      "category": "Live Animals"
+    },
+    {
+      "id": 41,
+      "name": "Embryo Cryo-Storage (5-Year Plan)",
+      "price": 2200.00,
+      "image": "❄️",
+      "description": "Secure the genetic legacy of your prize-winning units. We offer off-site cryo-storage at our state-of-the-art facility in Geneva. Price covers 5 years of storage for up to 10 embryos.",
+      "sku": "GEN-CRYO-5Y",
+      "stock": 100,
+      "category": "Genetics"
+    },
+    {
+      "id": 42,
+      "name": "The Socialite (Mimic)",
+      "price": 9800.00,
+      "image": "🦜",
+      "description": "A highly social and vocal breed that can learn to mimic simple electronic tones and sounds from its environment. Does not 'speak', but provides active auditory feedback.",
+      "specs": "L: 30cm  W: 7kg",
+      "leadTime": "7 Weeks",
+      "stock": 3,
+      "category": "Live Animals"
+    },
+    {
+      "id": 43,
+      "name": "Surrogacy Unit (Sterile Female)",
+      "price": 15000.00,
+      "image": "🤰",
+      "description": "A sterile female unit, genetically optimized to serve as a surrogate for custom-designed or cloned embryos. For professional breeders aiming to scale their operations.",
+      "sku": "F-SURROGATE-X1",
+      "stock": 4,
+      "category": "Genetics"
+    },
+    {
+      "id": 44,
+      "name": "Bio-Fueler Pod (Industrial Scale)",
+      "price": 40000.00,
+      "image": "⛽",
+      "description": "A low-grade livestock variant that produces extremely high quantities of lipids, easily processed into biofuel. Sold only to licensed energy corporations. Price per 100-unit pod.",
+      "yield": "High Lipid Output",
+      "leadTime": "4 weeks",
+      "stock": 50,
+      "category": "Livestock"
+    },
+    {
+      "id": 45,
+      "name": "Dwarf Orca Corporate Pen",
+      "price": 12.99,
+      "image": "✒️",
+      "description": "A high-quality ballpoint pen with the Dwarf Orca logo. The perfect gift for the executive who has everything, including a genetically engineered whale in their lobby.",
+      "stock": 1000,
+      "category": "Merchandise"
     }
   ]
 }
