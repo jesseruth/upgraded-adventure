@@ -51,7 +51,7 @@ class LayoutManager {
     footerContainer.innerHTML = `
       <footer class="site-footer">
         <div class="container">
-          <p>© 2025 Dwarf Orca — Pioneers in Bio-Engineered Aquatic Life</p>
+          <p>© ${new Date().getFullYear()} Dwarf Orca — Pioneers in Bio-Engineered Aquatic Life</p>
           <p><a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
         </div>
       </footer>
