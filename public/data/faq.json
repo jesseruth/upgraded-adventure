@@ -2,23 +2,28 @@
   "faqs": [
     {
       "id": 1,
-      "question": "Are these real killer whales?",
-      "answer": "No. This is a fictional website created for demonstration purposes. We do not sell real animals."
+      "question": "Is the Grotowski Minimization Vector safe for the animals?",
+      "answer": "Absolutely. The Grotowski Minimization Vector is a targeted genetic therapy that affects only growth potential without altering the fundamental biology or health of the orca. All our units undergo rigorous health screenings and are certified by the Global Bio-Engineering Alliance (GBA) to be free of genetic defects. They live full, healthy lives, just in a smaller package."
     },
     {
       "id": 2,
-      "question": "What is the return policy?",
-      "answer": "Since we don't sell real products, there are no returns. But in a hypothetical world, we'd offer a 30-day money-back guarantee on all plushies!"
+      "question": "What is the average lifespan of a Companion Class 'Teacup' Orca?",
+      "answer": "Companion Class breeds have an average lifespan of 20-25 years, comparable to other domestic pets like dogs. This is a result of a controlled environment, specialized nutrition, and the absence of natural predators. Our Livestock Class has a different lifecycle, which is detailed in our commercial documentation."
     },
     {
       "id": 3,
-      "question": "Do you ship internationally?",
-      "answer": "We ship our imaginary products to every country in the world, including Atlantis."
+      "question": "I'm concerned about the ethics of the 'Barnyard Blue' line. Are they treated humanely?",
+      "answer": "We adhere to the highest standards of bio-ethical husbandry. Our Livestock Class units are raised in low-stress, high-density vertical aquaculture farms. The process is designed to be humane from birth to harvest, ensuring a sustainable and ethical protein source as envisioned by our founder to solve the Great Bovine Collapse."
     },
     {
       "id": 4,
-      "question": "How do I care for my miniature killer whale?",
-      "answer": "For plushies: gentle wash cycle. For the fictional live ones: lots of love and imaginary fish."
+      "question": "Do you ship live units internationally?",
+      "answer": "Yes, we are a licensed global exporter of Class-C biological assets. All live units are shipped in cryo-sedation via certified bio-couriers. Please be aware that import regulations, taxes, and local bio-containment laws vary by region. It is the buyer's responsibility to ensure compliance with all local ordinances before placing an order."
+    },
+    {
+      "id": 5,
+      "question": "What kind of tank and support systems are required for a single 'Teacup' Orca?",
+      "answer": "We recommend a minimum tank size of 250 gallons with a fully integrated saltwater filtration and temperature control system. Our 'OrcaOS' compatible tanks provide automated monitoring for pH, salinity, and oxygen levels. Please see our Technical Documentation for a complete list of required and recommended equipment."
     }
   ]
 }
