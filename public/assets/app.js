@@ -37,7 +37,7 @@ class LayoutManager {
               <span class="cart-count" id="cartCount">0</span>
             </button>
           </div>
-          <p class="tagline">Premium Miniature Killer Whale Collectibles</p>
+          <p class="tagline">Pioneers in Bio-Engineered Aquatic Life</p>
         </div>
       </header>
     `;
@@ -50,7 +50,7 @@ class LayoutManager {
     footerContainer.innerHTML = `
       <footer class="site-footer">
         <div class="container">
-          <p>© 2025 Dwarf Orca — Premium Killer Whale Collectibles</p>
+          <p>© 2025 Dwarf Orca — Pioneers in Bio-Engineered Aquatic Life</p>
           <p><a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
         </div>
       </footer>
