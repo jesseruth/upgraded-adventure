@@ -35,10 +35,23 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 
 /* Filters */
 .filters-container {
-  display: flex;
-  gap: 1rem;
   margin-bottom: 2rem;
+}
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+.category-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.search-sort-controls {
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
 }
 .filter-btn {
@@ -49,10 +62,6 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.2s;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 .filter-btn:hover {
   border-color: var(--accent);
@@ -63,15 +72,58 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
   color: white;
   border-color: var(--accent);
 }
-.filter-count {
-  font-size: 0.8em;
-  opacity: 0.8;
-  background: rgba(0,0,0,0.05);
-  padding: 2px 6px;
-  border-radius: 10px;
+.search-input, .sort-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
 }
-.filter-btn.active .filter-count {
-  background: rgba(255,255,255,0.2);
+.search-input:focus, .sort-select:focus {
+  border-color: var(--accent);
+}
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Footer & Newsletter */
+.site-footer {
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  text-align: center;
+}
+.newsletter-section {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+.newsletter-section h3 {
+  margin-bottom: 0.5rem;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.newsletter-form input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 300px;
+}
+.newsletter-form button {
+  white-space: nowrap;
+}
+.footer-links {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 /* Product Card */

@@ -51,11 +51,53 @@ class LayoutManager {
     footerContainer.innerHTML = `
       <footer class="site-footer">
         <div class="container">
-          <p>© ${new Date().getFullYear()} Dwarf Orca — Pioneers in Bio-Engineered Aquatic Life</p>
-          <p><a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
+          <div class="newsletter-section">
+            <h3>Join the Pod</h3>
+            <p>Get updates on new breeds and restocking alerts.</p>
+            <form id="newsletterForm" class="newsletter-form">
+              <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+          <div class="footer-links">
+            <p>© ${new Date().getFullYear()} Dwarf Orca — Pioneers in Bio-Engineered Aquatic Life</p>
+            <p><a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
+          </div>
         </div>
       </footer>
     `;
+
+    // Newsletter logic
+    const form = document.getElementById('newsletterForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletterEmail').value;
+        if (email) {
+          localStorage.setItem('dwarforca_newsletter', email);
+          this.showNotification('Welcome to the pod! 🐋');
+          form.reset();
+        }
+      });
+    }
+  }
+
+  showNotification(message) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      z-index: 2000;
+      animation: slideIn 0.3s ease-out;
+    `;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
   }
 
   initModals() {
@@ -195,6 +237,8 @@ class ShoppingCart {
     this.items = this.loadCart();
     this.products = [];
     this.activeCategory = 'All';
+    this.searchTerm = '';
+    this.sortBy = 'default';
     this.init();
   }
 
@@ -232,11 +276,25 @@ class ShoppingCart {
     // Get unique categories
     const categories = ['All', ...new Set(this.products.map(p => p.category || 'Merchandise'))];
 
-    filtersContainer.innerHTML = categories.map(category => `
-      <button class="filter-btn ${category === this.activeCategory ? 'active' : ''}" data-category="${category}">
-        ${category}
-      </button>
-    `).join('');
+    filtersContainer.innerHTML = `
+      <div class="filters-row">
+        <div class="category-buttons">
+          ${categories.map(category => `
+            <button class="filter-btn ${category === this.activeCategory ? 'active' : ''}" data-category="${category}">
+              ${category}
+            </button>
+          `).join('')}
+        </div>
+        <div class="search-sort-controls">
+          <input type="text" id="searchInput" placeholder="Search products..." value="${this.searchTerm}" class="search-input">
+          <select id="sortSelect" class="sort-select">
+            <option value="default" ${this.sortBy === 'default' ? 'selected' : ''}>Sort by</option>
+            <option value="price-asc" ${this.sortBy === 'price-asc' ? 'selected' : ''}>Price: Low to High</option>
+            <option value="price-desc" ${this.sortBy === 'price-desc' ? 'selected' : ''}>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+    `;
 
     // Add event listeners
     filtersContainer.querySelectorAll('.filter-btn').forEach(btn => {
@@ -246,15 +304,57 @@ class ShoppingCart {
         this.renderProducts();
       });
     });
+
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        this.searchTerm = e.target.value;
+        this.renderProducts();
+      });
+      // Maintain focus after re-render if we were to re-render filters, 
+      // but we only re-render products on search, so it's fine.
+    }
+
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        this.sortBy = e.target.value;
+        this.renderProducts();
+      });
+    }
   }
 
   renderProducts() {
     const grid = document.getElementById('productsGrid');
     if (!grid) return;
 
-    const filteredProducts = this.activeCategory === 'All' 
-      ? this.products 
-      : this.products.filter(p => (p.category || 'Merchandise') === this.activeCategory);
+    let filteredProducts = this.products;
+
+    // Filter by Category
+    if (this.activeCategory !== 'All') {
+      filteredProducts = filteredProducts.filter(p => (p.category || 'Merchandise') === this.activeCategory);
+    }
+
+    // Filter by Search Term
+    if (this.searchTerm) {
+      const term = this.searchTerm.toLowerCase();
+      filteredProducts = filteredProducts.filter(p => 
+        p.name.toLowerCase().includes(term) || 
+        p.description.toLowerCase().includes(term)
+      );
+    }
+
+    // Sort
+    if (this.sortBy === 'price-asc') {
+      filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (this.sortBy === 'price-desc') {
+      filteredProducts.sort((a, b) => b.price - a.price);
+    }
+
+    if (filteredProducts.length === 0) {
+      grid.innerHTML = '<div class="no-results">No products found matching your criteria.</div>';
+      return;
+    }
 
     grid.innerHTML = filteredProducts.map(product => {
       // Build extra details HTML if available
