@@ -141,6 +141,16 @@ class LayoutManager {
           </div>
         </div>
       </div>
+
+      <!-- Product Quick View Modal -->
+      <div class="modal" id="productModal">
+        <div class="modal-content product-modal-content">
+          <button class="close-btn product-modal-close" id="closeProductBtn">&times;</button>
+          <div class="product-modal-body" id="productModalBody">
+            <!-- Content loaded by JS -->
+          </div>
+        </div>
+      </div>
     `;
 
     document.body.insertAdjacentHTML('beforeend', modalsHTML);
@@ -357,26 +367,16 @@ class ShoppingCart {
     }
 
     grid.innerHTML = filteredProducts.map(product => {
-      // Build extra details HTML if available
-      let extraDetails = '';
-      if (product.specs) extraDetails += `<div class="product-detail"><strong>Specs:</strong> ${product.specs}</div>`;
-      if (product.leadTime) extraDetails += `<div class="product-detail"><strong>Lead Time:</strong> ${product.leadTime}</div>`;
-      if (product.yield) extraDetails += `<div class="product-detail"><strong>Yield:</strong> ${product.yield}</div>`;
-      if (product.components) extraDetails += `<div class="product-detail"><strong>Components:</strong> ${product.components}</div>`;
-      if (product.software) extraDetails += `<div class="product-detail"><strong>Software:</strong> ${product.software}</div>`;
-      if (product.feedType) extraDetails += `<div class="product-detail"><strong>Feed Type:</strong> ${product.feedType}</div>`;
-      if (product.contents) extraDetails += `<div class="product-detail"><strong>Contents:</strong> ${product.contents}</div>`;
-      if (product.includes) extraDetails += `<div class="product-detail"><strong>Includes:</strong> ${product.includes}</div>`;
-      if (product.usage) extraDetails += `<div class="product-detail"><strong>Usage:</strong> ${product.usage}</div>`;
-
+      // Build extra details HTML if available (kept for grid view if needed, but we'll show simplified version)
+      // We will only show description and price on card, everything else in modal
+      
       return `
       <div class="product-card">
-        <div class="product-image">${product.image}</div>
+        <div class="product-image clickable" data-id="${product.id}">${product.image}</div>
         <div class="product-info">
           <div class="product-category">${product.category || 'Merchandise'}</div>
-          <h3 class="product-name">${product.name}</h3>
+          <h3 class="product-name clickable" data-id="${product.id}">${product.name}</h3>
           <p class="product-description">${product.description}</p>
-          ${extraDetails}
           <div class="product-price">$${product.price.toFixed(2)}</div>
           <div class="product-stock ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
             ${product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
@@ -390,10 +390,90 @@ class ShoppingCart {
       </div>
     `}).join('');
 
-    // Add event listeners to add to cart buttons
+    // Add event listeners
+    // Add to Cart buttons
     document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
       btn.addEventListener('click', (e) => this.addToCart(parseInt(e.target.dataset.id)));
     });
+
+    // Quick View clicks
+    document.querySelectorAll('.product-image.clickable, .product-name.clickable').forEach(el => {
+      el.addEventListener('click', (e) => {
+        // Find closest product-card then get ID from the element itself
+        const id = parseInt(e.target.closest('.clickable').dataset.id);
+        this.openProductModal(id);
+      });
+    });
+  }
+
+  openProductModal(productId) {
+    const product = this.products.find(p => p.id === productId);
+    if (!product) return;
+
+    const modalBody = document.getElementById('productModalBody');
+    if (!modalBody) return;
+
+    // Build specs table
+    let specsHtml = '';
+    const specs = [
+      { label: 'Specs', value: product.specs },
+      { label: 'Lead Time', value: product.leadTime },
+      { label: 'Yield', value: product.yield },
+      { label: 'Components', value: product.components },
+      { label: 'Software', value: product.software },
+      { label: 'Feed Type', value: product.feedType },
+      { label: 'Contents', value: product.contents },
+      { label: 'Includes', value: product.includes },
+      { label: 'Usage', value: product.usage }
+    ].filter(s => s.value);
+
+    if (specs.length > 0) {
+      specsHtml = `
+        <div class="product-specs">
+          <h4>Specifications</h4>
+          <table>
+            ${specs.map(s => `<tr><th>${s.label}:</th><td>${s.value}</td></tr>`).join('')}
+          </table>
+        </div>
+      `;
+    }
+
+    modalBody.innerHTML = `
+      <div class="product-modal-grid">
+        <div class="product-modal-image">${product.image}</div>
+        <div class="product-modal-details">
+          <div class="product-category">${product.category || 'Merchandise'}</div>
+          <h2>${product.name}</h2>
+          <div class="product-price large">$${product.price.toFixed(2)}</div>
+          <p class="product-description large">${product.description}</p>
+          
+          ${specsHtml}
+
+          <div class="product-modal-actions">
+            <div class="product-stock ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+              ${product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+            </div>
+            <button class="btn btn-add-to-cart-modal" ${product.stock === 0 ? 'disabled' : ''}>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Bind Modal Add to Cart
+    modalBody.querySelector('.btn-add-to-cart-modal').addEventListener('click', () => {
+      this.addToCart(product.id);
+      this.closeProductModal();
+    });
+
+    const modal = document.getElementById('productModal');
+    if (modal) modal.classList.add('active');
+  }
+
+  closeProductModal() {
+    const modal = document.getElementById('productModal');
+    if (modal) modal.classList.remove('active');
   }
 
   setupEventListeners() {
@@ -409,6 +489,10 @@ class ShoppingCart {
     const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
     if (closeCheckoutBtn) closeCheckoutBtn.addEventListener('click', () => this.closeCheckout());
     
+    // Close Product modal
+    const closeProductBtn = document.getElementById('closeProductBtn');
+    if (closeProductBtn) closeProductBtn.addEventListener('click', () => this.closeProductModal());
+
     // Checkout button
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) checkoutBtn.addEventListener('click', () => this.openCheckout());
@@ -432,6 +516,13 @@ class ShoppingCart {
     if (checkoutModal) {
       checkoutModal.addEventListener('click', (e) => {
         if (e.target.id === 'checkoutModal') this.closeCheckout();
+      });
+    }
+
+    const productModal = document.getElementById('productModal');
+    if (productModal) {
+      productModal.addEventListener('click', (e) => {
+        if (e.target.id === 'productModal') this.closeProductModal();
       });
     }
   }
