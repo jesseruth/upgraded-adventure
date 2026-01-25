@@ -246,10 +246,49 @@ class ShoppingCart {
   constructor() {
     this.items = this.loadCart();
     this.products = [];
+    this.testimonials = []; // Add testimonials array
     this.activeCategory = 'All';
     this.searchTerm = '';
     this.sortBy = 'default';
     this.init();
+  }
+
+  async init() {
+    await this.loadInventory();
+    this.renderHero();
+    this.renderFilters();
+    this.renderProducts();
+    this.setupEventListeners();
+    this.updateCartCount();
+  }
+
+  async loadInventory() {
+    try {
+      const [iResponse, tResponse] = await Promise.all([
+        fetch('data/inventory.json'),
+        fetch('data/testimonials.json')
+      ]);
+      
+      const iData = await iResponse.json();
+      this.products = iData.products;
+
+      // Load testimonials silently, don't block if fail
+      if (tResponse.ok) {
+        const tData = await tResponse.json();
+        this.testimonials = tData.testimonials || [];
+      }
+    } catch (error) {
+      console.error('Error loading data:', error);
+      // Fallback products if JSON fails
+      this.products = [
+        { id: 1, name: 'Killer Whale Plush - Small', price: 14.99, image: '🐋', description: 'Adorable small orca plushie', stock: 0 },
+        { id: 2, name: 'Killer Whale Plush - Medium', price: 24.99, image: '🐋', description: 'Medium-sized orca companion', stock: 0 },
+        { id: 3, name: 'Killer Whale Plush - Large', price: 34.99, image: '🐋', description: 'Large orca plush', stock: 0 },
+        { id: 4, name: 'Killer Whale Figurine Set', price: 19.99, image: '🐋', description: 'Set of 5 miniature figurines', stock: 0 },
+        { id: 5, name: 'Orca Enamel Pin', price: 8.99, image: '📌', description: 'Cool enamel pin design', stock: 0 },
+        { id: 6, name: 'Killer Whale Bundle', price: 49.99, image: '📦', description: 'Everything bundle', stock: 0 }
+      ];
+    }
   }
 
   async init() {
@@ -489,6 +528,29 @@ class ShoppingCart {
       `;
     }
 
+    // Filter reviews
+    const productReviews = this.testimonials.filter(t => t.productId === product.id);
+    let reviewsHtml = '';
+    
+    if (productReviews.length > 0) {
+      reviewsHtml = `
+        <div class="product-reviews-section">
+          <h4>Customer Reviews (${productReviews.length})</h4>
+          <div class="reviews-list">
+            ${productReviews.map(r => `
+              <div class="review-item-small">
+                <div class="review-header-small">
+                  <span class="review-stars">★`.repeat(r.stars) + `</span>
+                  <span class="review-author">${r.name}</span>
+                </div>
+                <p class="review-text-small">"${r.text}"</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
     modalBody.innerHTML = `
       <div class="product-modal-grid">
         <div class="product-modal-image">${product.image}</div>
@@ -499,6 +561,7 @@ class ShoppingCart {
           <p class="product-description large">${product.description}</p>
           
           ${specsHtml}
+          ${reviewsHtml}
 
           <div class="product-modal-actions">
             <div class="product-stock ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
@@ -749,12 +812,24 @@ class TestimonialManager {
     if (!container) return; // Only run on testimonials page
 
     try {
-      const response = await fetch('data/testimonials.json');
-      if (!response.ok) throw new Error('Failed to load testimonials');
-      const data = await response.json();
-      this.renderTestimonials(data.testimonials || [], container);
+      // Load both testimonials and inventory
+      const [tResponse, iResponse] = await Promise.all([
+        fetch('data/testimonials.json'),
+        fetch('data/inventory.json')
+      ]);
+
+      if (!tResponse.ok) throw new Error('Failed to load testimonials');
+      const tData = await tResponse.json();
+      
+      let products = [];
+      if (iResponse.ok) {
+        const iData = await iResponse.json();
+        products = iData.products || [];
+      }
+
+      this.renderTestimonials(tData.testimonials || [], products, container);
     } catch (error) {
-      console.error('Error loading testimonials:', error);
+      console.error('Error loading data:', error);
       container.innerHTML = '<p>Could not load testimonials at this time.</p>';
     }
   }
@@ -767,14 +842,22 @@ class TestimonialManager {
     return stars;
   }
 
-  renderTestimonials(testimonials, container) {
-    container.innerHTML = testimonials.map(item => `
+  renderTestimonials(testimonials, products, container) {
+    container.innerHTML = testimonials.map(item => {
+      // Find product name if linked
+      const product = item.productId ? products.find(p => p.id === item.productId) : null;
+      const verifiedBadge = product 
+        ? `<div class="verified-purchase">Verified Owner: <strong>${product.name}</strong></div>` 
+        : '';
+
+      return `
       <div class="testimonial-card">
         <div class="testimonial-header">
           <div class="testimonial-avatar">${item.avatar}</div>
           <div class="testimonial-user-info">
             <h3>${item.name}</h3>
             <div class="location">${item.location} | ${item.date}</div>
+            ${verifiedBadge}
           </div>
           <div class="testimonial-rating">
             <div class="stars">${this.renderStars(item.stars)}</div>
@@ -785,7 +868,7 @@ class TestimonialManager {
           <p>${item.text}</p>
         </div>
       </div>
-    `).join('');
+    `}).join('');
   }
 }
 
