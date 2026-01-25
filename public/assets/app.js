@@ -254,10 +254,61 @@ class ShoppingCart {
 
   async init() {
     await this.loadInventory();
+    this.renderHero();
     this.renderFilters();
     this.renderProducts();
     this.setupEventListeners();
     this.updateCartCount();
+  }
+
+  renderHero() {
+    const heroContent = document.getElementById('heroContent');
+    if (!heroContent) return;
+
+    // Feature "The 'Lap-Whale' (Teacup)" - ID 9
+    const featuredId = 9;
+    const product = this.products.find(p => p.id === featuredId);
+
+    if (!product) return; // Keep default hero if product not found
+
+    heroContent.innerHTML = `
+      <div class="hero-featured">
+        <div class="hero-text">
+          <span class="hero-badge">Featured Spotlight</span>
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
+          <div class="hero-actions">
+            <button class="btn btn-hero-buy" data-id="${product.id}">Add to Cart - $${product.price.toFixed(2)}</button>
+            <button class="btn btn-secondary btn-hero-details" data-id="${product.id}">View Details</button>
+          </div>
+        </div>
+        <div class="hero-image-large clickable" data-id="${product.id}">
+          ${product.image}
+        </div>
+      </div>
+    `;
+
+    // Bind Hero Events
+    const buyBtn = heroContent.querySelector('.btn-hero-buy');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        this.addToCart(product.id);
+      });
+    }
+
+    const detailsBtn = heroContent.querySelector('.btn-hero-details');
+    if (detailsBtn) {
+      detailsBtn.addEventListener('click', () => {
+        this.openProductModal(product.id);
+      });
+    }
+
+    const heroImg = heroContent.querySelector('.hero-image-large');
+    if (heroImg) {
+      heroImg.addEventListener('click', () => {
+        this.openProductModal(product.id);
+      });
+    }
   }
 
   async loadInventory() {
